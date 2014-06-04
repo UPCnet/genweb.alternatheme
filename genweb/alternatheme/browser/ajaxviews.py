@@ -12,6 +12,8 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
 
+from genweb.alternatheme.browser.interfaces import IGenwebTheme
+
 
 def test(condition, value_true, value_false):
     if condition:
@@ -69,3 +71,4 @@ class folderSummaryView(AjaxBaseView):
     grok.name('ajax_folder_summary_view')
     grok.template('folder_summary_view')
     grok.context(Interface)
+    grok.layer(IGenwebTheme)

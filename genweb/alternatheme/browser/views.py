@@ -38,8 +38,7 @@ from genweb.core.utils import genweb_config, pref_lang
 
 from genweb.alternatheme.browser.interfaces import IGenwebTheme, IHomePageView
 
-from genweb.portlets.browser.manager import IScreenTypeSpanStorage
-from genweb.alternatheme.portlets.fullnews import Renderer
+from genweb.portlets.browser.manager import ISpanStorage
 
 from Products.CMFCore.interfaces import IFolderish
 from plone.memoize.view import memoize
@@ -68,6 +67,7 @@ Per a la seva publicació a l'Agenda general de la UPC.
 
 class GWConfig(grok.View):
     grok.context(Interface)
+    grok.layer(IGenwebTheme)
 
     def render(self):
         return genweb_config()
@@ -100,7 +100,10 @@ class HomePageBase(grok.View):
         # Except in the portal root, when we look for an alternative
         if IPloneSiteRoot.providedBy(self.context):
             pc = getToolByName(context, 'portal_catalog')
+            # Add the use case of mixin types of IHomepages. The main ones of a
+            # non PAM-enabled site and the possible inner ones.
             result = pc.searchResults(object_provides=IHomePage.__identifier__,
+                                      portal_type='Document',
                                       Language=pref_lang())
             if result:
                 # Return the object without forcing a getObject()
@@ -119,24 +122,12 @@ class HomePageBase(grok.View):
 
     def getSpanValueForManager(self, manager):
         portletManager = getUtility(IPortletManager, manager)
-        spanstorage = getMultiAdapter((self.portlet_container, portletManager), IScreenTypeSpanStorage)
-        phone = spanstorage.phone
-        tablet = spanstorage.tablet
-        desktop = spanstorage.desktop
-        klass = ''
-
-        if desktop:
-            klass = 'col-lg-{} col-md-{}'.format(desktop, desktop)
+        spanstorage = getMultiAdapter((self.portlet_container, portletManager), ISpanStorage)
+        span = spanstorage.span
+        if span:
+            return span
         else:
-            klass = 'col-lg-4 col-md-4'
-
-        if tablet:
-            klass = '{} col-sm-{}'.format(klass, tablet)
-
-        if phone:
-            klass = '{} col-xs-{}'.format(klass, phone)
-
-        return klass
+            return '4'
 
     def have_portlets(self, manager_name, view=None):
         """Determine whether a column should be shown. The left column is called
@@ -169,6 +160,17 @@ class homePage(HomePageBase):
     """
     grok.implements(IHomePageView)
     grok.context(IPloneSiteRoot)
+    grok.layer(IGenwebTheme)
+
+
+class subHomePage(HomePageBase):
+    """ This is the special view for the subhomepage containing support for the
+        portlet managers provided by the package genweb.portlets.
+        It is used in IFolderish (DX and AT) content for use in inner landing
+        pages.
+    """
+    grok.implements(IHomePageView)
+    grok.context(IFolderish)
     grok.layer(IGenwebTheme)
 
 
@@ -676,7 +678,6 @@ class newsCollectionView(grok.View):
                    sort_on=('Date'),
                    sort_order='reverse')
         results3 = []
-        #import ipdb;ipdb.set_trace()
         path_folder_news = self.all_news_link()
         for brain in results2:
             brain_url = brain.getURL()

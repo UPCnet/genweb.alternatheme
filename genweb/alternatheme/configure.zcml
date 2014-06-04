@@ -16,7 +16,6 @@
   <include package="grokcore.component" file="meta.zcml" />
 
   <include package=".browser" />
-  <include package=".portlets" />
 
   <cmf:registerDirectory name="genwebtheme_images" recursive="True" />
   <cmf:registerDirectory name="genwebtheme_custom" recursive="True" />
@@ -92,4 +91,10 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+<!--     <genericsetup:importStep
+      name="genweb.alternatheme.setupstep"
+      title="geweb.alternatheme special import handlers"
+      description=""
+      handler="genweb.alternatheme.setuphandlers.UninstallGWT" />
+ -->
 </configure>

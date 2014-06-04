@@ -6,7 +6,7 @@
     <interface
         interface=".interfaces.IGenwebTheme"
         type="zope.publisher.interfaces.browser.IBrowserSkinType"
-        name="GenwebTheme"
+        name="GenwebAlternaTheme"
         />
 
     <browser:page

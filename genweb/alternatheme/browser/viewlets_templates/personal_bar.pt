@@ -48,21 +48,32 @@
                 </li>
               </ul>
             </li>
-            <tal:co tal:condition="view/pam_installed">
-            <li role="menuitem"><a tal:condition="view/showRootFolderLink"
-                   tal:attributes="href string:${view/portal_url}/${view/current_language}/folder_contents">
-                   <tal:rootFolder i18n:translate="genweb-accesarrel">
-                      Root folder</tal:rootFolder>
-            </a></li>
-            <li role="menuitem"><a tal:condition="view/showRootFolderLink"
-                   tal:attributes="href string:${view/portal_url}/shared/folder_contents">
-                   <tal:sharedFolder i18n:translate="genweb-sharedfolder">
-                      Shared folder</tal:sharedFolder>
-            </a></li>
+            <tal:co condition="view/is_pam_installed">
+              <tal:notispamroot condition="not: view/is_root">
+                <li role="menuitem"><a tal:condition="view/showRootFolderLink"
+                       tal:attributes="href string:${view/portal_url}/${view/current_language}/folder_contents">
+                       <tal:rootFolder i18n:translate="genweb-accesarrel">
+                          Root folder</tal:rootFolder>
+                </a></li>
+                <li role="menuitem"><a tal:condition="view/showRootFolderLink"
+                       tal:attributes="href string:${view/portal_url}/shared/folder_contents">
+                       <tal:sharedFolder i18n:translate="genweb-sharedfolder">
+                          Shared folder</tal:sharedFolder>
+                </a></li>
+              </tal:notispamroot>
+              <tal:ispamroot condition="view/is_root">
+                <tal:langs repeat="lang view/get_available_langs">
+                  <li role="menuitem"><a tal:condition="view/showRootFolderLink"
+                         tal:attributes="href string:${view/portal_url}/${view/lang}/folder_contents"
+                         tal:content="lang">
+                         Lang code
+                </a></li>
+                </tal:langs>
+              </tal:ispamroot>
             </tal:co>
-            <tal:co tal:condition="not view/pam_installed">
+            <tal:co condition="not: view/is_pam_installed">
             <li role="menuitem"><a tal:condition="view/showRootFolderLink"
-                   tal:attributes="href string:${view/portal_url}/${view/current_language}/folder_contents">
+                   tal:attributes="href string:${view/portal_url}/folder_contents">
                    <tal:rootFolder i18n:translate="genweb-accesarrel">
                       Root folder</tal:rootFolder>
             </a></li>
