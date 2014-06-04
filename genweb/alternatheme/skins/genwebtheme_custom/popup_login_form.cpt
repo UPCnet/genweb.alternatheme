@@ -1,0 +1,193 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="genweb">
+
+<head>
+</head>
+
+<body tal:define="portal_state context/@@plone_portal_state;
+                  portal_url portal_state/portal_url;
+                  auth nocall:context/acl_users/credentials_cookie_auth|context/cookie_authentication|nothing;
+                  isURLInPortal nocall:context/portal_url/isURLInPortal;
+                  login_template_ids python:'login login_success login_password login_failed login_form logged_in logout logged_out registered mail_password mail_password_form register require_login member_search_results pwreset_finish localhost'.split();
+                  came_from request/came_from|request/HTTP_REFERER|nothing;
+                  came_from_template_id python:came_from and context.plone_utils.urlparse(came_from)[2].split('/')[-1];
+                  came_from python:test(came_from is not None and isURLInPortal(came_from) and came_from_template_id not in login_template_ids, came_from, None);
+                  next request/next|nothing;
+                  next python:test(next is not None and isURLInPortal(next), next, None);
+                  errors options/state/getErrors;
+                  ac_name auth/name_cookie|string:__ac_name;
+                  ac_password auth/pw_cookie|string:__ac_password;
+                  ac_persist auth/persist_cookie|nothing;
+                  login_name python:request.get('login_name', request.get(ac_name, ''));
+                  checkPermission nocall: context/portal_membership/checkPermission;
+                  site_properties context/portal_properties/site_properties;
+                  use_email_as_login site_properties/use_email_as_login|nothing;
+                  external_login_url site_properties/external_login_url|nothing;
+                  external_login_iframe site_properties/external_login_iframe|nothing;
+                  mail_password python:test(checkPermission('Mail forgotten password', context), portal_url + '/mail_password_form', '');
+                  mail_password_url request/mail_password_url|nothing;
+                  mail_password_url python:test(mail_password_url and isURLInPortal(mail_password_url), mail_password_url, mail_password);
+                  join_actions python:context.portal_actions.listActionInfos('user/join', object=context) or [{}];
+                  join python:join_actions[0].get('url');
+                  join python:test(join and checkPermission('Add portal member', context), join, '');
+                  join_url request/join_url|nothing;
+                  join_url python:test(join_url is not None and isURLInPortal(join_url), join_url, join);
+                  use_normal python:auth and not external_login_url;
+                  use_iframe python:auth and external_login_url and external_login_iframe;
+                  use_external python:auth and external_login_url and not external_login_iframe;
+                  target request/target|nothing;
+                  target python:test(target in ('_parent', '_top', '_blank', '_self'), target, None);
+                  ztu modules/ZTUtils;">
+
+        <div class="alert alert-error" role="alert"
+             id="enable_cookies_message"
+             style="display:none">
+          <button data-dismiss="alert" class="close" type="button">×</button>
+          <strong i18n:translate="">
+              Info
+          </strong>
+          <tal:msg i18n:translate="enable_cookies_message_before_login">
+              Cookies are not enabled. You must enable cookies before you can log in.
+          </tal:msg>
+        </div>
+
+        <div tal:condition="python: not auth" i18n:translate="login_form_disabled">
+            Since cookie authentication is disabled, cookie-based login is not available.
+        </div>
+
+        <p class="documentDescription"
+           i18n:translate="genweb-heading_sign_in-v4">
+           Please log in using your UPC intranet user.
+        </p>
+        <div class="accordion" id="accordionLogin">
+
+          <div class="accordion-group">
+            <div class="accordion-heading box-gradient">
+              <a class="accordion-toggle" href="http://cas.upc.edu"
+                 tal:attributes="href context/cas_login_url | nothing">
+                <strong>
+                  <tal:entra i18n:translate="genweb-single-sign-on-v4">Single sign on log in</tal:entra>
+                  <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                       i18n:attributes="alt obrir_link_finestra_nova">
+                </strong>
+             </a>
+            </div>
+
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading box-gradient">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionLogin" href="#colapsible-login">
+                <strong i18n:translate="genweb_loginlocal">Log in only in this site</strong>
+             </a>
+            </div>
+            <div id="colapsible-login" class="accordion-body collapse box-gradient">
+              <div class="accordion-inner">
+                <form class="form-horizontal margin0 enableAutoFocus"
+                      method="post"
+                      id="login_form"
+                      tal:condition="use_normal"
+                      tal:attributes="action python:context.absolute_url()+'/'+template.id">
+
+                  <input type="hidden"
+                      name="came_from"
+                      value=""
+                      tal:attributes="value came_from|nothing" />
+
+                  <input type="hidden"
+                      name="next"
+                      value=""
+                      tal:attributes="value next|nothing" />
+
+                  <input type="hidden"
+                      name="ajax_load"
+                      value=""
+                      tal:attributes="value request/ajax_load|nothing" />
+
+                  <input type="hidden"
+                      name="ajax_include_head"
+                      value=""
+                      tal:attributes="value request/ajax_include_head|nothing" />
+
+                  <input type="hidden"
+                      name="target"
+                      value=""
+                      tal:attributes="value request/target|nothing" />
+
+                  <input type="hidden"
+                      name="mail_password_url"
+                      value=""
+                      tal:attributes="value request/mail_password_url|nothing" />
+
+                  <input type="hidden"
+                      name="join_url"
+                      value=""
+                      tal:attributes="value request/join_url|nothing" />
+
+                  <input type="hidden" name="form.submitted" value="1" />
+                  <input type="hidden" name="js_enabled" id="js_enabled" value="0" />
+                  <input type="hidden" name="cookies_enabled" id="cookies_enabled" value="" />
+                  <input type="hidden" name="login_name" id="login_name" value="" />
+                  <input type="hidden" name="pwd_empty" id="pwd_empty" value="0" />
+
+                  <div class="control-group"
+                       tal:define="error python:errors.get(ac_name, None);"
+                       tal:attributes="class python:test(error, 'control-group error', 'control-group')">
+                    <label class="control-label" for="inputEmail"
+                           i18n:domain="plone"
+                           i18n:translate="label_login_name">Username</label>
+                    <div class="controls">
+                      <input type="text" id="inputEmail" placeholder="nom.usuari"
+                             tal:attributes="name ac_name;
+                                             value login_name;">
+                      <span class="help-inline"
+                            tal:condition="error"
+                            tal:content="error">Validation error output</span>
+                    </div>
+                  </div>
+                  <div class="control-group"
+                       tal:define="error python:errors.get(ac_password, None);"
+                       tal:attributes="class python:test(error, 'control-group error', 'control-group')">
+                    <label class="control-label" for="inputPassword"
+                           i18n:domain="plone"
+                           i18n:translate="label_password">Password</label>
+                    <div class="controls">
+                      <input type="password" id="inputPassword" placeholder="contrasenya"
+                             tal:attributes="name ac_password">
+                      <span class="help-inline"
+                            tal:condition="error"
+                            tal:content="error">Validation error output</span>
+                    </div>
+                  </div>
+                  <div class="control-group margin0">
+                    <div class="controls">
+                      <button type="submit" name="submit" class="btn btn-primary"
+                              i18n:domain="plone"
+                              i18n:translate="label_log_in">Log in</button>
+                      <h2 class="l"
+                          i18n:translate="genweb-si_heu_oblidat_la_contrasenya_question">
+                          Have you forgotten your password?
+                      </h2>
+                      <p class="s margin0"
+                         i18n:translate="genweb-si_heu_oblidat_la_contrasenya">
+                          If you have forgotten your password,
+                          <tal:recuperarla i18n:name="click_here">
+                            <a tal:attributes="href string:${portal_url}/canvidecontrasenya"
+                               i18n:translate="genweb-per_recuperarla">
+                                click here to retrieve it
+                            </a>
+                          </tal:recuperarla>
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+</body>
+</html>

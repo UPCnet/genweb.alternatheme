@@ -1,0 +1,80 @@
+//
+// Plantilles
+// --------------------------------------------------
+
+
+
+
+
+
+/* ABANS EREN LI */
+.success {
+  background-color: $successBackground !important;
+  color:$grayDark;
+}
+.error {
+  background-color: $errorBackground !important;
+  color:$grayDark;
+}
+.info {
+  background-color: $infoBackground !important;
+  color:$grayDark;
+}
+.warning {
+  background-color: $warningBackground !important;
+  color:$grayDark;
+}
+.inverse {
+  background-color: $black !important;
+  color:$white;
+}
+.primary {
+  background-color: $blue !important;
+  color:$white;
+}
+/*exten error de plone*/
+.field.error {margin: 0 -5px; padding:0 5px; @include border-radius(6px); @include box-shadow (0 0 5px lighten($red,25%));}
+
+/*links en inverse i primary */
+a.inverse, .inverse a, a .inverse {
+	color:#3be;
+}
+/*sobre blau els links no poden ser blaus */
+a.primary, .primary a, a .primary {
+	color:#ff0;
+}
+
+
+
+
+/*FAQ*/
+.accordion.faq .accordion-heading a  {
+	position:relative;
+	&:after {
+		content:"+";
+	  	//@include box-shadow(0 1px 1px $btnBorder);
+	  	@include border-radius(25px);  	
+	  	background: $grayLight;
+	  	position:absolute;
+	  	font-weight:bold;
+	  	right:7px;
+	  	top:7px;
+	  	color: $white;
+	  	font-size:107.692308%;
+	  	padding:0 6px 2px;
+	  }	
+	&:hover {
+		background:#f2f8fb;
+		&:after {background-color:$blue;}
+	}
+
+}
+
+
+/* COLUMNES AUTO */
+.content-columns-3 {
+	@include content-columns(3,20px)
+}
+.content-columns-2 {
+	@include content-columns(2,20px)	
+}

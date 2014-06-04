@@ -1,0 +1,15 @@
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> */
+
+@import "<dtml-var portal_url>/plone.css";
+@import "<dtml-var portal_url>/++gw++stylesheets/genwebupc.css";
+
+html {background:white;}
+#charmap table {font-size:12px;}
+#charmap table td { padding:0 2px !important;}
+.row {width: 100%;}
+#details_panel, #addimage_panel {margin-left:0 !important;}
+input {max-width:90% !important;}
+input[type="file"] {position:relative; opacity:1;-moz-opacity: 1;filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);}
+.panel_wrapper div.current {height: auto;}
+#iframecontainer {border: 1px solid #08c; border-radius:3px;}
+.panel_wrapper, .panel_wrapper div.current {height: auto !important;}

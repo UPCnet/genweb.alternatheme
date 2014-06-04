@@ -1,0 +1,27 @@
+<div
+     i18n:domain="genweb">
+        <form method="get" tal:attributes="action context/absolute_url" tal:condition="viewlet/permisos_important">
+          <div i18n:translate="important_buttons">
+            <input
+                type="submit"
+                class="btn btn-success"
+                name="genweb.alternatheme.viewlet.marcar_important"
+                value="Marca com a improtant"
+                i18n:attributes="value button_important"
+                i18n:name="important_button"
+            />
+          </div>
+        </form>
+        <form method="get" tal:attributes="action context/absolute_url" tal:condition="viewlet/permisos_notimportant">
+          <div i18n:translate="notimportant_buttons">
+            <input
+                type="submit"
+                class="btn btn-warning"
+                name="genweb.alternatheme.viewlet.marcar_notimportant"
+                value="Desmarca com a important"
+                i18n:attributes="value button_notimportant"
+                i18n:name="notimportant_button"
+            />
+          </div>
+        </form>
+</div>

@@ -1,0 +1,128 @@
+/* <dtml-with base_properties> */
+/* <dtml-call "REQUEST.set('portal_url', portal_url())"> */
+body.mceForceColors {background:#FFF; color:#000;}
+body.mceContentBody {
+	background:#fff;
+	padding:4px !important;
+	margin: 0;
+	font-size:13px !important;
+}
+
+.mceContentBody a {
+    border-bottom: 1px #cccccc solid !important;
+}
+
+.mceItemTable, .mceItemTable td, .mceItemTable th, .mceItemTable caption, .mceItemVisualAid {border: 1px dashed #BBB;}
+a.mceItemAnchor {width:12px; line-height:6px; overflow:hidden; padding-left:12px; background:url(img/items.gif) no-repeat bottom left;}
+img.mceItemAnchor {width:12px; height:12px; background:url(img/items.gif) no-repeat;}
+table {cursor:default; font-size: 100%;}
+table td, table th {cursor:text}
+ins {border-bottom:1px solid green; text-decoration: none; color:green}
+del {color:red; text-decoration:line-through}
+cite {border-bottom:1px dashed blue}
+acronym {border-bottom:1px dotted #CCC; cursor:help}
+abbr, html\:abbr {border-bottom:1px dashed #CCC; cursor:help}
+
+
+
+
+
+
+/*VERD*/
+h1 {
+	background: rgba(69,96,17,.2);
+	border-bottom: 1px solid #456211;
+	cursor:help;	
+}
+h1:hover:before {
+	position:fixed;	display:block; background:#456211; color:white; font-size:13px; font-weight:normal; text-shadow:0 -1px 1px rgba(0,0,0,.5);	font-style:normal;border-radius:4px;padding:9px 18px;top: 4px;left: 4px; margin:0; line-height:27px !important;
+}
+/*TARONJA*/
+b,
+i,
+acronym {
+	background: rgba(248,148,6,.2);
+	border-bottom: 1px solid #F89406;
+	cursor:help;
+}
+b:hover:before,
+i:hover:before,
+acronym:hover:before {
+	position:fixed;	display:block; background:#F89406; color:white; font-size:13px; font-weight:normal; text-shadow:0 -1px 1px rgba(0,0,0,.5); font-style:normal;border-radius:4px;padding:9px 18px;top: 4px;left: 4px; margin:0; line-height:27px !important;
+}
+
+
+
+/*VERMELL*/
+u,
+center,
+font,
+big {
+	background: rgba(204,0,0,.2);
+	border-bottom: 1px solid #c00;
+	cursor:help;
+}
+u:hover:before,
+center:hover:before,
+font:hover:before,
+big:hover:before {
+	position:fixed;	display:block; background:#c00; color:white; font-size:13px; font-weight:normal; text-shadow:0 -1px 1px rgba(0,0,0,.5);	font-style:normal;border-radius:4px;padding:9px 18px;top: 4px;left: 4px;; margin:0; line-height:27px !important; z-index:99999;
+}
+
+
+
+
+h1:hover:before {
+	content:"Has fet servir un H1 i les pàgines habitualment no en tenen. Assegura't que no és un error";
+}
+
+
+b:hover:before {
+	content:"Per a marcar negretes fem servir STRONG. Has de canviar aquest element B per un STRONG";
+}
+i:hover:before {
+	content:"Per a marcar negretes fem servir EM. Has de canviar aquest element I per un EM";
+}
+acronym:hover:before {
+	content:"Per a marcar acrònims fem servir ABBR sempre. Has de canviar aquest element I per un ABBR";
+}
+
+
+
+u:hover:before {
+	content:"L'element U és incorrecte en HTML5, s'eliminarà en desar la pàgina.";
+}
+font:hover:before {
+	content:"L'element FONT és incorrecte en HTML5, s'eliminarà en desar la pàgina.";
+}
+center:hover:before {
+	content:"L'element CENTER és incorrecte en HTML5, s'eliminarà en desar la pàgina.";
+}
+big:hover:before {
+	content:"BIG no és un element correcte en HTML5. Canvieu la mida de text amb estils";
+}
+
+
+
+
+
+
+
+html .visible-phone,html .visible-tablet,html .visible-desktop,html .hidden-phone,html .hidden-tablet,
+html .hidden-desktop {background: rgba(58,162,195,.2); border-bottom: 1px solid #30a2c3; cursor:help; display:block !important;}
+.visible-phone:hover:before,
+.visible-tablet:hover:before,
+.visible-desktop:hover:before,
+.hidden-phone:hover:before,
+.hidden-tablet:hover:before,
+.hidden-desktop:hover:before {
+	position:fixed;	display:block; background:#30a2c3; color:white; font-size:13px; font-weight:normal; text-shadow:0 -1px 1px rgba(0,0,0,.5);	font-style:normal;border-radius:4px;padding:9px 18px;top: 4px;left: 4px;; margin:0; line-height:27px !important;
+}
+.hidden-phone:hover:before {content:"Contingut amagat per a MÒBILS";}
+.hidden-tablet:hover:before {content:"Contingut amagat per a TAULETES";}
+.hidden-desktop:hover:before {content:"Contingut amagat per a ESCRIPTORIS";}
+.visible-phone:hover:before {content:"Contingut només visible per a MÒBILS";}
+.visible-tablet:hover:before {content:"Contingut només visible per a TAULETES";}
+.visible-desktop:hover:before {content:"Contingut només visible per a ESCRIPTORIS";}
+
+/* </dtml-with> */

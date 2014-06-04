@@ -1,0 +1,27 @@
+{
+  "name": "genweb.alternatheme",
+  "version": "0.0.1",
+  "homepage": "https://github.com/UPCnet/ulearn.buildout",
+  "authors": [
+    "Victor Fernandez de Alba <sneridagh@gmail.com>"
+  ],
+  "description": "BS3-based Genweb Theme",
+  "keywords": [
+    "genweb",
+    "theme"
+  ],
+  "license": "GPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.1.1",
+    "fontawesome": "~4.1.0",
+    "modernizr": "~2.8.2"
+  }
+}

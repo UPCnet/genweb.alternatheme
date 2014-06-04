@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plone">
+
+    <interface
+        interface=".interfaces.IGenwebTheme"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="GenwebTheme"
+        />
+
+    <browser:page
+        for="*"
+        name="portal_tabs_view"
+        class=".views.gwCatalogNavigationTabs"
+        permission="zope.Public"
+        allowed_attributes="topLevelTabs"
+        layer=".interfaces.IGenwebTheme"
+        />
+
+    <browser:page
+        name="plone_layout"
+        for="*"
+        permission="zope.Public"
+        class=".views.gwLayoutPolicy"
+        allowed_interface="plone.app.layout.globals.interfaces.ILayoutPolicy"
+        layer=".interfaces.IGenwebTheme"
+        />
+
+</configure>

@@ -1,0 +1,39 @@
+<nav id="portal-globalnav"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="view/show_menu"
+     i18n:domain="plone"><!-- #portal-globalnav -->
+  <div class="container">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-inner">
+        <a class="navbar-toggle btn navbar-btn" data-toggle="collapse" data-target="#menu-1">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
+        <h2 id="titol-menu-1" class="hidden-lg hidden-md hidden-sm brand">
+          <a data-toggle="collapse" data-target="#menu-1" >Menú</a>
+        </h2>
+
+        <div id='menu-1' class="collapse navbar-collapse">
+          <ul class="nav navbar-nav"
+              tal:define="selected_tab python:view.selected_portal_tab">
+
+            <tal:tabs tal:repeat="tab portal_tabs">
+              <li tal:define="tid tab/id"
+                  tal:attributes="id string:portaltab-${tid};
+                                  class python:selected_tab==tid and 'active' or 'plain'">
+                <a href=""
+                   tal:content="tab/name"
+                   tal:attributes="href tab/url;
+                                   class string:state-${tab/review_state|nothing}">
+                   Tab Name
+                </a>
+              </li>
+            </tal:tabs>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

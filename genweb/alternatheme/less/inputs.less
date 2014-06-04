@@ -1,0 +1,50 @@
+
+// INPUT FILE CANVI VISUAL
+// -------------------------
+//  Origen però molt modificat: http://dev.dbl-a.com/jquery/custom-file-input-with-jquery/
+input[type="file"] {
+  position: absolute; cursor: pointer; background: transparent; border: 0;
+  opacity: 0; -moz-opacity: 0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=1); z-index: 999;
+  top:0; left:0;
+  height:45px;}
+
+.customfile { width:100%; max-width: 400px;cursor: pointer; overflow: hidden; position: relative; padding-bottom:5px; .box-sizing(border-box);}
+.customfile-disabled { opacity: .5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); cursor: default;  }
+.customfile-feedback { display: block;font-style: italic; white-space: nowrap;
+text-overflow: ellipsis; overflow: hidden;}
+.customfile-feedback-populated {
+  padding-top: 0;
+  font-style: normal; font-weight: bold;
+  &:before {
+    background: image-url("/++gw++static/images/gh-c.png") no-repeat;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    content: " ";
+    margin-right: 3px;
+    top:2px;
+    position: relative;
+    background-position: -24px -26px;
+  }
+}
+
+.customfile-button { margin-top:-4px;}
+.customfile-hover .customfile-button, .customfile-focus .customfile-button {&:extend(.btn:hover);}
+.customfile-focus .customfile-button { outline: 1px dotted #ccc;  }
+
+/*afegeix icona de fitxer a les extensions habituals*/
+.customfile-ext-jpg:before, .customfile-ext-gif:before,
+.customfile-ext-png:before, .customfile-ext-jpeg:before, .customfile-ext-bmp:before { background-position: -456px -50px;}
+
+.customfile-ext-mp3:before {background-position: -24px -2px;}
+
+.customfile-ext-mp4:before, .customfile-ext-mov:before,
+.customfile-ext-wav:before, .customfile-ext-m4v:before, .customfile-ext-swf:before {background-position: -192px -2px;}
+
+.customfile-ext-zip:before, .customfile-ext-tar:before,
+.customfile-ext-sit:before, .customfile-ext-rar:before { background-position: -432px -144px;}
+
+.customfile-ext-doc:before, .customfile-ext-docx:before {background-position: -360px -193px;}
+.customfile-ext-xls:before, .customfile-ext-xlsx:before {background-position: -384px -193px;}
+.customfile-ext-ppt:before, .customfile-ext-pptx:before {background-position: -407px -193px;}
+.customfile-ext-pdf:before {background-position: -432px -193px;}

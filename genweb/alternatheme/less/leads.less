@@ -1,0 +1,42 @@
+// Destacats
+// -------------------------
+
+.lead {
+  margin-bottom: @line-height-base;
+  font-size: 100%;
+  line-height: @line-height-base;
+  background:@gray-lighter;
+  text-shadow:0 1px @white;
+  .box-shadow(0 1px 1px @btn-default-border);
+  border-radius: 5px;
+  padding: 12px;
+}
+
+
+.lead-small {
+  &:extend(.lead);
+  font-size: 84.6153846%;
+  color:@gray;
+  padding:6px 12px;
+  background:@white;
+  .border-radius(10px);
+  border: 5px solid lighten(@genwebPrimary, 25%);
+}
+
+.lead-large {
+  &:extend(.lead);
+  font-size:115.384615%;
+  color:@gray;
+  background:darken(@white,1%);
+  border-top:5px solid @genwebPrimary;
+  &:after {
+  	background:#e5e5e5;
+  	display:block;
+  	margin:18px 0 -18px;
+  	height:5px;
+  	content:".";
+  	color:#e5e5e5;
+  	.box-shadow(0 1px 1px @btn-default-border);
+  	border-radius: 0 0 5px 5px;
+  }
+}

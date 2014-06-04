@@ -1,0 +1,46 @@
+/*!
+ * Genweb UPC v4.0
+ *
+ * Copyright 2012-2013 UPC
+ *
+ */
+
+
+// REPEAT VARIABLES & MIXINS
+// -------------------------
+// Required since we compile the responsive stuff separately
+
+$genwebPrimary:         #007bc0 !default;
+$genwebTitles:          #557C95 !default;
+
+@import "compass";
+
+@import "base";
+@import "nav";
+@import "plantilles";
+@import "leads";
+@import "wells-boxes";
+@import "lists";
+@import "tables";
+@import "texts";
+@import "inputs";
+
+@import "portlets";
+@import "plone";
+@import "gw3togw4";
+
+@import "animations";
+@import "mobile";
+@import "retina";
+
+//@import "edit";
+@import "simulated-views";
+@import "empaquetats";
+
+@import "ie";
+
+@import "upcnet";
+
+@import "ui";
+
+@import "print";

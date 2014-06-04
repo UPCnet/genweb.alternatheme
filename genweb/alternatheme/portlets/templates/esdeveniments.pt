@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+  <div class="portlet portlet-esdeveniments"
+         i18n:domain="plone">
+        <h2>Agenda <i class="icon-calendar large-icon pull-right"></i></h2>
+        <ul class="unstyled">
+            <tal:events tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                                DateTime python:modules['DateTime'].DateTime"
+                        tal:repeat="obj view/published_events">
+                <li tal:define="plone_view context/@@plone;
+                                item_startdate python:toLocalizedTime(obj.start);
+                                item_enddate python:toLocalizedTime(obj.end);
+                                startday python:view.getDay(obj.start);
+                                endday python:view.getDay(obj.end);
+                                startmonth_abbr python:view.getMonthAbbr(obj.start);
+                                startmonth python:view.getMonth(obj.start);
+                                endmonth python:view.getMonth(obj.end);
+                                endmonth_abbr python:view.getMonthAbbr(obj.end);
+                                sameday python:view.sameDay(obj)"
+                    tal:attributes="class python: sameday and '' or 'multidate'">
+                    <tal:co tal:condition="sameday">
+                        <a href="#" tal:attributes="href obj/getURL">
+                          <tal:repl tal:replace="obj/pretty_title_or_id">Some Event</tal:repl>
+                        </a>
+                        <time class="smaller"
+                                tal:attributes="datetime item_startdate">
+                            <tal:repl tal:replace="startday">28</tal:repl>
+                            <abbr rel="tooltip"
+                                  data-placement="left"
+                                  tal:attributes="title startmonth">
+                                <tal:repl tal:replace="startmonth_abbr">set.</tal:repl>
+                            </abbr>
+                        </time>
+                    </tal:co>
+
+                    <tal:co tal:condition="not: sameday">
+                        <a href="#" class="multidate-before" tal:attributes="href obj/getURL">
+                          <tal:repl tal:replace="obj/pretty_title_or_id">Some Event</tal:repl>
+                        </a>
+                            <time class="smaller"
+                                    tal:attributes="datetime item_startdate">
+                                <tal:repl tal:replace="startday">28</tal:repl>
+                                <abbr rel="tooltip"
+                                      data-placement="left"
+                                      tal:attributes="title startmonth">
+                                    <tal:repl tal:replace="startmonth_abbr">set.</tal:repl>
+                                </abbr>
+                            </time>
+                            <time class="smaller"
+                                  tal:attributes="datetime item_enddate">
+                                <tal:repl tal:replace="endday">28</tal:repl>
+                                <abbr rel="tooltip"
+                                      data-placement="left"
+                                      tal:attributes="title endmonth">
+                                    <tal:repl tal:replace="endmonth_abbr">set.</tal:repl>
+                                </abbr>
+                            </time>
+                    </tal:co>
+                </li>
+            </tal:events>
+        </ul>
+        <a href="" class="portlet-footer" tal:attributes="href view/all_events_link" i18n:domain="genweb" i18n:translate="box_upcoming_events">
+           Més esdeveniments
+        </a>
+  </div>
+</html>

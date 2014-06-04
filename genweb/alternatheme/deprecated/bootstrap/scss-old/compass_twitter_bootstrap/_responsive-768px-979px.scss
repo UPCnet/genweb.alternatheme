@@ -1,0 +1,30 @@
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
+@media only screen and (min-width: 768px) and (max-width: 979px) and (orientation: portrait) {
+
+  // Fixed grid
+  @include grid-core($gridColumnWidth768, $gridGutterWidth768);
+
+  // Fluid grid
+  @include grid-fluid($fluidGridColumnWidth768, $fluidGridGutterWidth768);
+
+  // Input grid
+  @include grid-input($gridColumnWidth768, $gridGutterWidth768);
+
+  // No need to reset .thumbnails here since it's the same $gridGutterWidth
+
+
+  // passem de 4 a 2 columnes, només per a gw AMB MENÚ LATERAL ESQUERRA!!
+  .span9 .row-fluid > [class*=span3]:nth-child(2n+1) {
+    clear: both;
+    margin-left: 0;
+  }
+
+	.span9 .row-fluid .span3 {
+	  width: 48% !important;
+	}
+
+
+}

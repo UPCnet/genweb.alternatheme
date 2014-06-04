@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/@@standard_macros/page"
+      i18n:domain="collage">
+
+  <div metal:fill-slot="body" id="content">
+    <metal:main-macro define-macro="main">
+
+      <div id="collage">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 tal:condition="here/getShowTitle|nothing"
+            class="documentFirstHeading">
+          <metal:field use-macro="python:here.widget('title', mode='view')">
+            Title
+          </metal:field>
+        </h1>
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <tal:description condition="here/getShowDescription|nothing">
+          <p class="documentDescription"
+             tal:condition="here/Description">
+            <metal:field use-macro="python:here.widget('description', mode='view')">
+              Description
+            </metal:field>
+          </p>
+        </tal:description>
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <div tal:replace="structure here/@@renderer">
+          Collage content
+        </div>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+      </div>
+    </metal:main-macro>
+  </div>
+
+</html>

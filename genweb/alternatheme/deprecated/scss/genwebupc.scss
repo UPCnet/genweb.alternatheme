@@ -1,0 +1,27 @@
+@import "reboot";
+@import "genweb_upc"; 
+
+
+.width100 {width:100% !important; -moz-box-sizing:border-box;}
+    .img_blank {opacity:.7;}
+    a:hover .img_blank {opacity:1;} /*ff*/
+
+
+b, strong {font-weight:bold;}
+
+.titol-espai h1 {
+	font-weight:200;
+    color:red;
+}
+
+
+.page-header {
+    border-top: 1px solid #CCCCCC !important;
+    border-bottom:0;
+    box-shadow: 0 -8px 16px -16px rgba(0,0,0,.5) !important;
+	}
+.page-header h1 {color:#446a8e;}
+
+
+a#calendar-next {width: 8px;}
+a#calendar-previous { margin-left: -4px; width: 12px;}

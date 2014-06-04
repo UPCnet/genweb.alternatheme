@@ -1,0 +1,32 @@
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  
+	#portal-header h1.pull-left img {opacity:0;}
+	#portal-header h1.pull-left {height:46px; width:207px;background:image-url("logoUPC@2x.png") no-repeat; @include background-size(100%);}
+
+	.header-image {background-image:image-url("capcalera@2x.jpg"); @include background-size(100%);}
+
+  	.list-links li {content: image-url("arrow@2x.png");}
+	.list-highlighted li {content: image-url("arrow_hl@2x.png");}
+
+	.img_blank[src*="blank_"] {width:10px; height:10px;}
+	.img_blank[src*="blank_blau"] {content: image-url("blank_blau@2x.png");}
+	.img_blank[src*="blank_gris"] {content: image-url("blank_gris@2x.png");}
+	.img_blank[src*="blank_blanc"] {content: image-url("blank_blanc@2x.png");}
+
+	.userScreen, .userTablet, .userMobile, .userGenweb {background-image:image-url("sprite_usuari@2x.png"); @include background-size(20px 400px);}
+
+	/*
+	.custom-checkbox label:before, 
+	.custom-radio label:before {
+  		background-image:image-url("cbr@2x.png");
+  		@include background-size(44px 165px);
+	}
+	*/
+//tanca media
+}

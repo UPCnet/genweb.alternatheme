@@ -1,0 +1,69 @@
+
+a:hover, a {
+	@include transition(color .5s ease-out);
+}
+.nav a:hover {
+	@include transition(background-color .2s ease-out);
+}
+.nav a {
+	@include transition(background-color .05s ease-in);
+}
+a.userScreen, a.userTablet, a.userMobile, a.userGenweb {
+	@include transition(background-position .1s linear);
+}
+#portal-personaltools-wrapper .dropdown-toggle:hover .user {
+	@include opacity(1);
+	@include transition(opacity .25s linear);
+}
+body, html {
+	@include transition(background-color .5s ease-out);
+}
+#content-area, #portal-column-content {
+	@include transition(box-shadow .5s ease-out);
+}
+
+
+
+@-webkit-keyframes opacitat { 0% {opacity: 0;} 50% {opacity: .01;} 100% {opacity:1;} }
+@-moz-keyframes opacitat { 0% {opacity: 0;} 50% {opacity: .01;} 100% {opacity:1;} }
+@-ms-keyframes opacitat { 0% {opacity: 0;} 50% {opacity: .01;} 100% {opacity:1;} }
+@-o-keyframes opacitat { 0% {opacity: 0;} 50% {opacity: .01;} 100% {opacity:1;} }
+@keyframes opacitat { 0% {opacity: 0;} 50% {opacity: .01;} 100% {opacity:1;} }
+.simulated-mobile-view #portal-column-content,
+.simulated-tablet-view #portal-column-content,
+html.simulated-mobile-view #content-area:before,
+html.simulated-tablet-view #content-area:before  {
+  -webkit-animation-name: opacitat; -webkit-animation-duration: 1s; -webkit-animation-iteration-count: 1; -webkit-animation-direction: alternate; -webkit-animation-timing-function: ease-out;
+  -moz-animation-name: opacitat; -moz-animation-duration: 1s; -moz-animation-iteration-count: 1; -moz-animation-direction: alternate; -moz-animation-timing-function: ease-out;
+  -ms-animation-name: opacitat; -ms-animation-duration: 1s; -ms-animation-iteration-count: 1; -ms-animation-direction: alternate; -ms-animation-timing-function: ease-out;
+  -o-animation-name: opacitat; -o-animation-duration: 1s; -o-animation-iteration-count: 1; -o-animation-direction: alternate; -o-animation-timing-function: ease-out;
+  animation-name: opacitat; animation-duration: 1s; animation-iteration-count: 1; animation-direction: alternate; animation-timing-function: ease-out;
+}
+html {
+  -webkit-animation-name: opacitat; -webkit-animation-duration: .5s; -webkit-animation-iteration-count: 1; -webkit-animation-direction: alternate; -webkit-animation-timing-function: ease-out;
+  -moz-animation-name: opacitat; -moz-animation-duration: .5s; -moz-animation-iteration-count: 1; -moz-animation-direction: alternate; -moz-animation-timing-function: ease-out;
+  -ms-animation-name: opacitat; -ms-animation-duration: .5s; -ms-animation-iteration-count: 1; -ms-animation-direction: alternate; -ms-animation-timing-function: ease-out;
+  -o-animation-name: opacitat; -o-animation-duration: .5s; -o-animation-iteration-count: 1; -o-animation-direction: alternate; -o-animation-timing-function: ease-out;
+  animation-name: opacitat; animation-duration: .5s; animation-iteration-count: 1; animation-direction: alternate; animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes illumina { 0% {-webkit-box-shadow: 0;} 75% {-webkit-box-shadow: 0;} 100% {-webkit-box-shadow: 0 0 10px rgba(0,123, 192,.5);} }
+@-moz-keyframes illumina { 0% {-moz-box-shadow: 0;} 75% {-moz-box-shadow: 0;} 100% {-moz-box-shadow: 0 0 10px rgba(0,123, 192,.5);} }
+@-ms-keyframes illumina { 0% {-ms-box-shadow: 0;} 75% {-ms-box-shadow: 0;} 100% {-ms-box-shadow: 0 0 10px rgba(0,123, 192,.5);} }
+@-o-keyframes illumina { 0% {-o-box-shadow: 0;} 75% {-o-box-shadow: 0;} 100% {-o-box-shadow: 0 0 10px rgba(0,123, 192,.5);} }
+@keyframes illumina { 0% {box-shadow: 0;} 75% {box-shadow: 0;} 100% {box-shadow: 0 0 10px rgba(0,123, 192,.5);} }
+.portalMessage, .alert {
+  -webkit-animation-name: illumina; -webkit-animation-duration: .5s; -webkit-animation-iteration-count: 2; -webkit-animation-direction: alternate; -webkit-animation-timing-function: ease-out;
+  -moz-animation-name: illumina; -moz-animation-duration: .5s; -moz-animation-iteration-count: 2; -moz-animation-direction: alternate; -moz-animation-timing-function: ease-out;
+  -ms-animation-name: illumina; -ms-animation-duration: .5s; -ms-animation-iteration-count: 2; -ms-animation-direction: alternate; -ms-animation-timing-function: ease-out;
+  -o-animation-name: illumina; -o-animation-duration: .5s; -o-animation-iteration-count: 2; -o-animation-direction: alternate; -o-animation-timing-function: ease-out;
+  animation-name: illumina; animation-duration: .5s; animation-iteration-count: 2; animation-direction: alternate; animation-timing-function: ease-out;
+}
+
+
+
+
+
+
+
+

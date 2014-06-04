@@ -1,0 +1,10 @@
+<tal:div condition="view/available" >
+<div class="row-xs-12">
+	    <a class="btn btn-default btn-default btn-block"
+	       tal:attributes="href view/managePortletsURL">
+	       <i class="fa fa-cog" i18n:domain="genweb" i18n:translate="manage_homeportlets_link">
+				Manage home page
+	       </i>
+	    </a>
+</div>
+</tal:div>

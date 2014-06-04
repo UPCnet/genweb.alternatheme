@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone">
+
+<body>
+
+<tal:block i18n:domain="plone"
+           metal:define-macro="portal_message">
+
+    <div class="alert alert-info" id="kssPortalMessage" style="display:none"  role="alert">
+        <strong>Info</strong>
+        <tal:block replace="nothing">KSS portal message</tal:block>
+    </div>
+
+    <tal:statusmsg tal:define="messages python:context.plone_utils.showPortalMessages()"
+                   tal:repeat="message messages">
+
+        <div class="alert alert-info" role="alert"
+             tal:define="mtype message/type | nothing"
+             tal:attributes="class string:alert alert-${mtype}">
+          <button data-dismiss="alert" class="close" type="button">×</button>
+          <strong tal:content="python:mtype.capitalize()"
+                  i18n:translate="">
+                    Info
+          </strong>
+          <tal:msg tal:content="message/message | nothing"
+                i18n:translate="">
+                The status message.
+          </tal:msg>
+        </div>
+
+    </tal:statusmsg>
+</tal:block>
+
+</body>
+</html>

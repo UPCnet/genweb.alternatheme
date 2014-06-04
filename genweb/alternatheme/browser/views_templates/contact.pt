@@ -1,0 +1,146 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en" lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="genweb">
+
+<body class="template-contacte">
+<script type="text/javascript">
+    RecaptchaOptions = { theme : 'white' };
+
+</script>
+<metal:block metal:fill-slot="top_slot"
+      tal:define="dummy python:request.set('disable_border', 1)" />
+
+<div metal:fill-slot="main">
+  <tal:main-macro metal:define-macro="main"
+            tal:define="dades context/@@genweb.utils/getDadesUnitat;
+                        genweb_config context/@@gwconfig">
+
+<!-- Dades de contacte -->
+    <tal:block tal:condition="dades">
+      <h1 class="documentFirstHeading"
+        i18n:translate="genweb_formContacte">
+          Contact
+      </h1>
+
+
+      <div class="row">
+        <div class="col-md-7 box box-gradient">
+          <metal:block use-macro="context/@@ploneform-macros/titlelessform" />
+        </div>
+        <div class="col-md-5"
+             tal:define="edifici python:getattr(dades, 'edifici_%s' % view.pref_lang(), u'Edifici Til·lers');
+                         campus python:getattr(dades, 'campus_%s' % view.pref_lang(), 'Campus Nord');
+                         adreca dades/adreca_sencera;
+                         codi_postal dades/codi_postal;
+                         localitat dades/localitat;
+                         telefon dades/telefon;
+                         fax dades/fax;
+                         email dades/email;
+                         id_scp dades/id;
+                         codi_upc dades/codi_upc;
+                         contacte_personalitzat view/getContactPersonalized"
+             tal:condition="adreca">
+            <tal:co tal:condition="contacte_personalitzat">
+              <h2 tal:content="python:getattr(dades, 'nom_%s' % view.pref_lang(), 'Servei de Comunicació i Promoció')">
+                Servei de Comunicació i Promoció
+              </h2>
+              <address>
+                <p tal:content="adreca">
+                  Campus Diagonal Sud, Edifici H. Av. Diagonal, 647. 08028 Barcelona
+                </p>
+              </address>
+                <ul class="unstyled" id='contacte-dades' >
+                  <li>
+                    <p tal:condition="telefon">
+                      <tal:telmsg i18n:translate="genweb_telefon">Telèfon</tal:telmsg>
+                      <tal:telefon content="telefon">
+                        Telèfon 93 401 65 83 / 65 85
+                      </tal:telefon>
+                    </p>
+                  </li>
+                  <li>
+                    <p tal:condition="fax">
+                      <tal:faxmsg i18n:translate="genweb_fax">Fax</tal:faxmsg>
+                      <tal:fax content="fax">
+                        93 401 60 54
+                      </tal:fax>
+                    </p>
+                  </li>
+                  <li>
+                    <p tal:condition="email">
+                      <abbr rel="tooltip" data-placement="top" title="Adreça electrònica"
+                            i18n:translate="genweb_ae">
+                        A/e
+                      </abbr>
+                      <a tal:attributes="href string:mailto:${email}"
+                         tal:content="email">
+                          director.oe@(upc.edu)
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+                <ul class="unstyled" id='contacte-links'>
+                  <li>
+                    <p>
+                      <a tal:condition="codi_upc" tal:attributes="href python:view.getURLDirectori(codi_upc)">
+                        <i class="icon-book"></i>
+                        Directori UPC
+                        <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                           i18n:attributes="alt obrir_link_finestra_nova">
+                      </a>
+                    </p>
+                  </li>
+                  <tal:maps tal:condition="python:not getattr(genweb_config, 'contacte_no_upcmaps', False)">
+                    <li>
+                        <p>
+                          <a href="https://maps.upc.edu" class="show" rel="tooltip" data-placement="bottom" title="Clica el marcador per anar a UPCmaps" target="_blank">
+                            <i class="icon-map-marker"></i>
+                            UPCmaps
+                            <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                                 i18n:attributes="alt obrir_link_finestra_nova" />
+                          </a>
+                        </p>
+                    </li>
+                  </tal:maps>
+                  </ul>
+                  <div tal:condition="python:not getattr(genweb_config, 'contacte_no_upcmaps', False)">
+                    <span class="img-mask">
+                      <iframe  tal:attributes="src python:view.getURLMaps(id_scp)" border="0">
+                      </iframe>
+                    </span>
+                  </div>
+                </tal:co>
+
+            <tal:co tal:condition="not: contacte_personalitzat">
+              <div tal:define="contact view/getContactPage">
+                <div tal:replace="structure contact/body">Cos de la pagina de contacte</div>
+              </div>
+            </tal:co>
+		</div>
+    </tal:block>
+
+
+    <tal:block tal:condition="not: dades">
+
+      <h1 class="documentFirstHeading"
+        i18n:translate="genweb_formContacte">
+          Contact
+      </h1>
+
+      <div class="row">
+        <div class="box box-gradient">
+          <metal:block use-macro="context/@@ploneform-macros/titlelessform" />
+        </div>
+      </div>
+
+    </tal:block>
+
+</tal:main-macro>
+
+</div>
+</body>
+</html>

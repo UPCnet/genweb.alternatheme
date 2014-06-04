@@ -1,0 +1,94 @@
+<div class="container"
+     i18n:domain="genweb">
+  <div class="clearfix">
+    <h1 class="pull-left">
+      <a href="http://www.upc.edu" accesskey="1" target="_blank">
+        <img tal:attributes="src string:${viewlet/portal_url}/++gw++static/images/logoUPC.png"
+             alt="Universitat Politècnica de Catalunya · BarcelonaTech">
+      </a>
+    </h1>
+    <a id='eines-menu' class="btn navbar-btn pull-right hidden-desktop hidden-tablet" data-toggle="collapse" data-target=".navbar-collapse-eines">
+      <i class="icon-wrench"></i>
+    </a>
+    <div class="navbar-collapse navbar-collapse-eines"
+         tal:define="dades context/@@genweb.utils/getDadesUnitat">
+      <tal:block replace="structure provider:genweb.search_manager" />
+      <ul id="eines" class="nav nav-pills pull-right">
+        <li><a accesskey="3"
+               i18n:domain="plone"
+               i18n:translate="Site Map"
+               tal:attributes="href string:${viewlet/portal_url}/sitemap">
+               Site Map
+             </a></li>
+        <li><a accesskey="9"
+               i18n:domain="plone"
+               i18n:translate="Contact"
+               tal:attributes="href string:${viewlet/portal_url}/contact">
+               Contact
+             </a></li>
+        <li tal:condition="viewlet/show_directory"
+            tal:define="filtered viewlet/show_directory_filtered">
+          <tal:codi tal:condition="dades">
+            <tal:block tal:condition="filtered"
+                       tal:define="codi_upc dades/codi_upc">
+              <a tal:attributes="href python:viewlet.getURLDirectori(codi_upc)" target="_blank" accesskey="7">
+                  Directori UPC
+                  <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                    i18n:domain="genweb"
+                    i18n:attributes="alt obrir_link_finestra_nova">
+              </a>
+            </tal:block>
+          </tal:codi>
+          <tal:block tal:condition="python:not filtered">
+            <a href="http://directori.upc.edu" target="_blank" accesskey="7">
+                Directori UPC
+                <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                  i18n:domain="genweb"
+                  i18n:attributes="alt obrir_link_finestra_nova">
+            </a>
+          </tal:block>
+        </li>
+
+        <li tal:condition="python:viewlet.show_login()">
+            <a href="" data-toggle="modal" data-target="#loginModal"
+               tal:attributes="href string:${viewlet/portal_url}/popup_login_form?came_from=${context/absolute_url}"
+               i18n:domain="genweb"
+               i18n:translate="identificat">
+               Identifica't
+            </a></li>
+        <tal:block replace="structure provider:genweb.language_selector_manager" />
+        <li class="divider"> </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="titol-espai clearfix">
+    <h1>
+      <a href="#" accesskey="2"
+         tal:attributes="href string:${viewlet/portal_url}">
+          <span tal:content="structure python:getattr(viewlet.genweb_config(), 'html_title_%s' % viewlet.pref_lang(), 'Servei de <b>Comunicació i Promoció</b>')">
+            Servei de <b>Comunicació i Promoció</b>
+          </span>
+          <img alt="" class="logoPropi pull-right"
+               tal:attributes="src string:${viewlet/portal_url}/logoPropi.png">
+      </a>
+    </h1>
+  </div>
+
+  <div class="header-image l3-image"
+       tal:attributes="class string:header-image ${viewlet/get_image_class}"></div>
+
+</div>
+<div id="loginModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true"
+     i18n:domain="genweb">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="loginModalLabel">Inicia la sessió</h3>
+  </div>
+  <div class="modal-body">
+    The popup login form
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Tanca</button>
+  </div>
+</div>

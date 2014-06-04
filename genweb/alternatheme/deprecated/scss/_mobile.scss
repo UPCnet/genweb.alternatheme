@@ -1,0 +1,54 @@
+@media only screen and (max-width: 640px) { 
+	.span6 .portlet-ampliat li > img,
+	.span7 .portlet-ampliat li > img,
+	.span8 .portlet-ampliat li > img,
+	.span9 .portlet-ampliat li > img,
+	.span10 .portlet-ampliat li > img,
+	.span11 .portlet-ampliat li > img,
+	.span12 .portlet-ampliat li > img {
+	  margin: 0 0 10px;
+	  max-width:100%;
+	  float:none;
+	}
+
+	// desactivem aquesta propietat per tal que surti el peu al mòbil #peu .span4 {display: none;}
+
+  .xafa {margin: 0 1.25em;}
+  .xafa2 { margin: 0 2.5em;  }
+  .xafa3 { margin: 0 3.75em; }
+  .xafa4 { margin: 0 5em; }
+  .pad { padding: 1.25em;}
+  .pad2 { padding: 2.5em; }
+  .pad3 { padding: 3.75em; }
+  .pad4 { padding: 5em;}
+
+  .no-image .header-image { display: none !important;}
+
+  #portal-sitemap ul {-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;}
+
+  #eines input, #eines input:focus {min-width: 65%; max-width:65% !important;}
+  #eines button {width: 34%;line-height: 20px;}
+
+  .portlet-baners {text-align: center;}
+
+
+
+  #dashboard > div  {float:none; width:100%;}
+
+  .btn-toolbar .btn-group {
+  	clear:both;
+  	display: block;
+  	& input {float:left !important; margin-bottom: 1em;}
+  }
+  .btn-group + .btn-group {margin-left:0;}
+
+
+  .portaltype-packet .estudis td:first-child, .portaltype-packet .estudis th:first-child {min-width: auto !important;}
+  .discussion .commentDate {float:none;}
+
+  .carousel-control.right { top: 62px;}
+  .carousel-control.left { top: 62px;}
+
+}
+
+

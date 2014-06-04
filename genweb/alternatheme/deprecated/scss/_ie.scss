@@ -1,0 +1,35 @@
+/* NOMES CORRECCIONS PER A IE SENSE HACKS */
+
+
+/* IE9- */
+html.lt-ie10 #portal-globalnav .nav-collapse {position:relative;}
+html.lt-ie10 #portal-globalnav .navbar .nav {position:absolute;}
+html.lt-ie10 .dk_container li {display: block; float:none;}
+
+/* IE8- */
+html.lt-ie9 .amunt {min-width:30px; display:inline-block; @include ie7-inline-block();}
+html.lt-ie9 .navbar img {max-width:inherit !important;}
+
+/* IE7- */
+html.lt-ie8 #portal-header,
+html.lt-ie8 #peu {position:relative;}
+html.lt-ie8 #portal-header .container,
+html.lt-ie8 #peu .container {position:relative; top:-5px; padding-top:5px;}
+html.lt-ie8 .breadcrumb h2 {margin-right:5px;}
+html.lt-ie8 .llistatLogos li {@include ie7-inline-block();}
+html.lt-ie8 .titol-espai a span {float:left; margin-top:10px;}
+html.lt-ie8 .header-image, 
+html.lt-ie8 .sobreElWeb li {margin-left:10px;}
+html.lt-ie8 .amunt {min-width:auto !important;}
+html.lt-ie8 .close {position:relative; margin-top:-8px;} 
+
+html.lt-ie8 #portal-header {border-bottom:0;}
+
+
+/*
+html.lt-ie8 .list-portlet li  {
+    position: relative;
+    zoom: expression(this.runtimeStyle.zoom="1", this.prependChild(document.createElement("i")).style.cssText="display:block; width:5px; height:5px; background:#007bc0; position:absolute; color:#007bc0; left:0; top:0; z-index:99999;");
+	zoom: 1;
+}
+*/

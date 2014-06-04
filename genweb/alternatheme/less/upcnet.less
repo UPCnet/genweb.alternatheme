@@ -1,0 +1,190 @@
+// UPCnet TOQUEU AQUÍ
+// -------------------
+.nav-gw4 {display:block !important; margin-top:@line-height-base/2;}
+
+.hiddenStructure { display: none !important;}
+
+.formTabs {
+    &:extend(.nav);
+    &:extend(.nav-pills);
+}
+
+// Revisar - Posat a ull
+#ajax-spinner {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    background-position: center center;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+
+
+
+.link-parent {
+    //icon-chevron-left
+    &:extend(.btn);
+    &:extend(.btn-info);
+    &:extend(.btn-small);
+    font-weight: bold;
+    margin-bottom: 1em;
+    &:before {
+        background: url("/++gw++static/images/gh-w.png") no-repeat -290px -95px;
+        content: " ";
+        display: inline-block;
+        height: 14px;
+        margin-right: 3px;
+        position: relative;
+        top: 2px;
+        width: 14px;
+    }
+}
+#category.documentByLine {&:extend(.muted);&:extend(.box);&:extend(.box-small);
+    &:before { content:""; &:extend([class^="icon-"]); &:extend(.icon-tags); width:15px;}
+}
+
+
+
+
+// MENUS CONTENT ACTIONS
+// --------------------------
+.icon-translate_into_en,
+.icon-translate_into_es {&:extend(.icon-language);}
+.icon-_manage_translations {&:extend(.icon-wrench);}
+
+.icon-delete {&:extend(.icon-remove);}
+
+.icon-folder_summary_view {&:extend(.icon-resume-view);}
+.icon-folder_full_view {&:extend(.icon-content-view);}
+.icon-folder_tabular_view {&:extend(.icon-table-view);}
+.icon-atct_album_view {&:extend(.icon-th);}
+.icon-folder_listing {&:extend(.icon-list-view);}
+.icon-contextSetDefaultPage {&:extend(.icon-star-empty);}
+
+.icon-folder {&:extend(.icon-folder-close);}
+.icon-image {&:extend(.icon-picture);}
+.icon-document {&:extend(.icon-page);}
+.icon-event {&:extend(.icon-calendar);}
+.icon-news-item {&:extend(.icon-news);}
+.icon-window {&:extend(.icon-iframe);}
+.icon-more {&:extend(.icon-plus);}
+.icon-settings {&:extend(.icon-filter);}
+.icon-packet {&:extend(.icon-box);}
+.icon-plonepopoll {&:extend(.icon-poll);}
+.icon-formfolder {&:extend(.icon-check);}
+.icon-survey {&:extend(.icon-list-alt);}
+
+
+.icon-workflow-transition-reject {&:extend(.icon-remove-circle);}
+.icon-workflow-transition-show {&:extend(.icon-remove-circle);}
+.icon-workflow-transition-hide {&:extend( .icon-ban-circle);}
+.icon-workflow-transition-restrict {}
+.icon-workflow-transition-publishtointranet {&:extend( .icon-eye-close);}
+.icon-workflow-transition-publicaalaintranet {&:extend( .icon-eye-close);}
+.icon-workflow-transition-publish {&:extend( .icon-eye-open);}
+.icon-workflow-transition-retracttointranet {&:extend( .icon-eye-close);}
+.icon-workflow-transition-retiraalaintranet {&:extend( .icon-eye-close);}
+.icon-workflow-transition-submit {&:extend( .icon-ok-circle);}
+.icon-workflow-transition-retiraaesborrany {&:extend(.icon-remove-circle);}
+#workflow-transition-hide {&:extend(.state-private);}
+#workflow-transition-publishtointranet {&:extend(.state-intranet);}
+#workflow-transition-publicaalaintranet {&:extend(.state-intranet);}
+#workflow-transition-publish {&:extend(.state-published);}
+#workflow-transition-reject {&:extend(.state-draft);}
+#workflow-transition-retiraaesborrany {&:extend(.state-draft);}
+#workflow-transition-retracttointranet {&:extend(.state-intranet);}
+#workflow-transition-retiraalaintranet {&:extend(.state-intranet);}
+#workflow-transition-show {&:extend(.state-draft);}
+#workflow-transition-submit {&:extend(.state-pending);}
+//.icon-policy {&:extend( .;}
+.icon-advanced {&:extend(.icon-wrench);}
+.icon-policy {&:extend( .icon-info-sign);}
+
+.actionSeparator {border-top:1px solid #b2b2b2; margin-top: 5px;
+    & > a {
+        margin-top:5px;
+    }
+}
+/* aixo no serveix per res pero mira...*/
+#actionMenuContent #more {}
+
+// taules i estats fet maco al folrder_contents
+#listing-table tr td:nth-child(6) .state-restricted-to-managers {&:extend(.label); &:extend(.label-inverse);}
+#listing-table tr td:nth-child(6) .state-visible {&:extend(.label); &:extend(.label-success);}
+#listing-table tr td:nth-child(6) .state-intranet {&:extend(.label); &:extend(.label-intranet);}
+#listing-table tr td:nth-child(6) .state-private {&:extend(.label); &:extend(.label-important);}
+
+
+
+//FITXERS
+.thumb-img img {
+    &:extend(.thumbnail);
+}
+
+
+// VISTES
+.tileItem img {&:extend(.img-polaroid); float:right; margin-top: 1em;}
+
+.tileHeadline { &:extend(.xxl); &:extend(.liniaDalt);}
+.tileFooter:before { content:"";  &:extend([class^="icon-"]); &:extend(.icon-plus-sign);}
+
+.template-atct_album_view #content-core {&:extend(.row-fluid);}
+.photoAlbumEntry {&:extend(.col-md-3);}
+.photoAlbumEntry a {&:extend(.thumbnail);
+    & img {width:100%;}
+    & .photoAlbumEntryTitle {
+        &:extend(.caption); }
+}
+
+
+
+
+// SELECTS
+.plone_jscalendar > * {display: inline-block;}
+.plone_jscalendar select {width:auto; display: inline-block;}
+
+
+
+
+.pb-ajax {
+  &:extend(.modal);}
+
+.pb-ajax .documentFirstHeading, .pb-ajax > div > h2 {
+  &:extend(.modal-header); margin:0; font-size: 130.769% !important;
+}
+
+.pb-ajax #content-core, .pb-ajax .documentDescription, .pb-ajax #content-history {
+  &:extend(.modal-body); margin-bottom:0;
+  max-height: 400px;
+}
+.pb-ajax .historyRecord {border-bottom: 1px solid #ccc;margin-bottom: 10px;padding-bottom: 10px;}
+
+input[type="checkbox"].required:after,
+input[type="radio"].required:after { content: none; }
+
+
+.recaptchatable {background: #fff;}
+
+.fieldUploadFile {display: none; }
+.fieldTextFormat {display: none; }
+
+
+// En la nevera, porque peta el desplegable de usuario.
+// https://github.com/UPCnet/genweb.alternatheme/blame/develop/genweb/alternatheme/stylesheets/genwebupc.css#L13932
+// .dropdown-menu a {
+// display: block;
+// padding: 3px 15px;
+// clear: both;
+// font-weight: normal;
+// line-height: 18px;
+// color: #666666;
+// white-space: nowrap;
+// font-size: 12px;
+// }
+
+#eines .typeahead.dropdown-menu a {
+    font-size: 12px;
+}

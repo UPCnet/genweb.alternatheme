@@ -1,0 +1,37 @@
+<nav id="portal-breadcrumbs"
+     role="navigation"
+     i18n:domain="plone"
+     tal:define="breadcrumbs view/breadcrumbs;
+                 is_rtl view/is_rtl">
+ <div class="container" tal:condition="not: view/paginaPrincipal">
+  <h2 i18n:translate="you_are_here" id="titol-breadcrumb" class="breadcrumb">You are here:</h2>
+  <ol class="breadcrumb" aria-labelledby="titol-breadcrumb">
+    <li>
+      <a i18n:translate="tabs_home"
+         tal:attributes="href view/navigation_root_url">Home</a>
+      <span tal:condition="breadcrumbs" class="divider" aria-hidden="true">▶</span>
+    </li>
+    <tal:crumbs repeat="crumb breadcrumbs">
+      <tal:item tal:define="is_last repeat/crumb/end;
+                            url crumb/absolute_url;
+                            title crumb/Title">
+        <li tal:condition="not: is_last"
+            tal:attributes="id string:breadcrumbs-${repeat/crumb/number}">
+          <a href="#"
+             tal:omit-tag="not: url"
+             tal:attributes="href url"
+             tal:content="title">
+             crumb
+          </a>
+          <span class="divider" aria-hidden="true">▶</span>
+        </li>
+        <li class="active"
+            tal:condition="is_last"
+            tal:content="title">
+            last crumb
+        </li>
+      </tal:item>
+    </tal:crumbs>
+  </ol>
+ </div>
+</nav>

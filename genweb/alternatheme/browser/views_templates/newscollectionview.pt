@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master">
+
+<body>
+
+<metal:content-core fill-slot="content-core">
+<tal:newsitems tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                           plone_view context/@@plone;
+                           news_items view/published_news_items;"
+               tal:condition="news_items"
+               i18n:domain="plone">
+
+
+    <div role="complementary">
+        <ul class="list-portlet">
+            <li tal:repeat="obj news_items">
+                <a href="" tal:attributes="href obj/getURL">
+                    <tal:titol replace="obj/pretty_title_or_id">Titol</tal:titol>
+                </a>
+                <div class="content-noticies">
+                    <p>
+                        <tal:cos tal:content="obj/Description">New description</tal:cos>
+                    </p>
+                    <!-- <tal:co >
+                        <time class="smaller" tal:content="python:toLocalizedTime(obj.EffectiveDate)">May 5</time>
+                    </tal:co> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</tal:newsitems>
+</metal:content-core>
+
+</body>
+
+</html>

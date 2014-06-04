@@ -1,0 +1,23 @@
+// EXTENSIO DE CLASSES
+// -------------------------
+.taulaRegistres {
+  &:extend(.table);
+  &:extend(.table-striped);
+}
+
+.llistat {&:extend(.list);}
+.llistatIndex {&:extend(.list-index);}
+div.llistatIndex, div.llistat {padding-left:0;}
+
+.fila {&:extend(.row);}
+.cella {&:extend([class*="col-md-"]);}
+.w1\3a 2, .w2\3a 4 {&:extend(.col-md-6);}
+.w1\3a 3 {&:extend(.col-md-4);}
+.w3\3a 4 {&:extend(.col-md-9);}
+.w1\3a 4 {&:extend(.col-md-3);}
+
+.textDestacat {&:extend(.lead);}
+.destacatBandejat {&:extend(.lead-large);}
+.destacatQuadres {&:extend(.lead-small);}
+
+div.fitxa {&:extend(.sheet);}

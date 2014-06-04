@@ -1,0 +1,177 @@
+/*
+// MIDES SAMARRETA
+// ------------------------- 
+*/
+h1, h2, h3 {color:$genwebTitles; margin-top:$baseLineHeight*3/2;}
+h1:first-child, h2:first-child, h3:first-child {margin-top:$baseLineHeight/2;}
+.popover-title {margin-top:0 !important;}
+
+*.xxxl 	{	font-size: 153.846154% !important; line-height: ($baseLineHeight / 2 * 3);}
+*.xxl 	{	font-size: 130.769231% !important; line-height: $baseLineHeight;} 
+*.xl 	{	font-size: 115.384615% !important; line-height: $baseLineHeight;} 
+*.l 	{	font-size: 107.692308% !important; line-height: $baseLineHeight;} 
+*.m 	{	font-size: 100% !important;		line-height: $baseLineHeight;} 
+*.s 	{	font-size: 92.3076923% !important; line-height: $baseLineHeight;} 
+*.xs 	{	font-size: 84.6153846% !important; line-height: $baseLineHeight;} 
+*.xxs 	{	font-size: 76.9230769% !important; line-height: $baseLineHeight;} 
+*.xxxs 	{	font-size: 69.2307692% !important; line-height: $baseLineHeight;}
+
+*.liniaBaix {
+	border-bottom:1px solid $tableBorder;
+	@include box-shadow(0 6px 4px -4px rgba(0,0,0,.1));
+	margin:0 0 18px 0;
+    padding: 0 0 12px;	
+}
+*.liniaDalt {
+	border-top:1px solid $tableBorder;
+	@include box-shadow(0 -6px 4px -4px rgba(0,0,0,.1));
+	margin:18px 0 0 0;
+    padding: 12px 0 6px;	
+}
+
+// LINKS
+//#content-core a:visited {color: lighten($blue, 15%);}
+//#content-core a:active {color: $orange; cursor: pointer;}
+//#content-core a:hover { color: $linkColorHover; text-decoration: underline;}
+
+// CONTENT CAPÇALERA
+// --------------------------
+.documentFirstHeading {
+	@extend .liniaBaix;
+  & span {font-weight: normal;}
+}
+.documentDescription {font-size:107.692308%; font-weight:bold; color:$grayLight; margin-bottom:$baseLineHeight;}
+
+
+// SEPARADORS
+// --------------------
+hr {
+  	margin: $baseLineHeight 0;
+  	border: 0;
+  	border-top: 1px solid $tableBorder;
+ 	border-bottom: 1px solid $white;
+}
+hr.liniaBaix {
+    height: 0;
+    border-top: 0;
+    @include box-shadow(0 12px 24px -6px rgba(0,0,0,.75));
+}
+hr.liniaDalt {
+    height: 0;
+    border-bottom: 0;
+	@include box-shadow(0 -12px 24px -6px rgba(0,0,0,.1));    
+}
+
+// PADDINGS I MARGINS
+// ----------------------
+
+.xafa {margin:auto 1.25em;}
+.xafa2  {margin:auto 2.5em;}
+.xafa3  {margin:auto 5em;}
+.xafa4  {margin:auto 10em;}
+.pad {padding:1.25em;}
+.pad2 {padding:2.5em;}
+.pad3 {padding:5em;}
+.pad4 {padding:10em;}
+
+// ALIGNS
+// ----------------------
+.align-center {text-align: center;}
+.align-left {text-align: left;}
+.align-right {text-align: right;}
+
+// AJUDES
+// ----------------------
+.pdf:after{
+  display:block;
+  width:14px;
+  height:14px;
+  background:image-url("gh.png");
+}
+
+// AJUDES
+// ----------------------
+.mayus {text-transform: uppercase;}
+.nobg 	{background:none !important;}
+a { /*fa que les URL llargues es trenquin*/
+  word-wrap: break-word;
+}
+.margin0 {margin: 0 !important;}
+.padding0 {padding:0 !important;}
+.prim {font-weight: normal;}
+.gris {color: $gray;}
+
+// EXTENSIO  IMATGES
+// ----------------------
+.img-shadowed {
+  @include box-shadow(0 1px 3px $gray);
+}
+
+
+// ICONES TIPUS ARXIUS
+// ----------------------
+.pdf, .ppt, .xls, .doc, .down, .https, .vid, .img, .txt {
+  &:after {
+    background: image-url("gh-c.png") no-repeat;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    content: " ";
+    margin-left: 3px;
+    top:2px;
+    position: relative;
+  }
+}
+.pdf:after {background-position: -432px -194px;}
+.ppt:after {background-position: -407px -193px;}
+.xls:after {background-position: -384px -193px;}
+.doc:after {background-position: -360px -193px;}
+.down:after {background-position: -95px -26px;}
+.https:after {background-position: -288px -26px;}
+.vid:after {background-position: -192px -2px;}
+.img:after {background-position: -456px -50px;}
+.txt:after {background-position: -24px -26px;}
+
+
+/*alineaments afegit*/
+.align-right {text-align: right;}
+.inline-block {display: inline-block;}
+
+
+
+//prettify
+  .com { color: $gray; } /*comentari*/
+  .lit { color: $purple; } 
+  .pun, .opn, .clo { color: $blueDark; }
+  .fun { color: $red; }
+  .str, .atv { color: darken($orange, 5%); }
+  .kwd, .prettyprint .tag { color: $pink; } /*codis*/
+  .typ, .atn, .dec, .var { color: $green; }
+  .pln { color: $grayDark; }
+  .prettyprint { background-color: #f5fcff;}
+  .prettyprint-inverse { background-color: #333;border:1px solid #111;}
+  .prettyprint.linenums {
+    -webkit-box-shadow: inset 40px 0 0 #E1F2F8, inset 41px 0 0 #bfced4;
+       -moz-box-shadow: inset 40px 0 0 #E1F2F8, inset 41px 0 0 #bfced4;
+            box-shadow: inset 40px 0 0 #E1F2F8, inset 41px 0 0 #bfced4;
+  }
+  .prettyprint-inverse.prettyprint.linenums {
+    -webkit-box-shadow: inset 40px 0 0 #222, inset 41px 0 0 #111;
+       -moz-box-shadow: inset 40px 0 0 #222, inset 41px 0 0 #111;
+            box-shadow: inset 40px 0 0 #222, inset 41px 0 0 #111;
+  }
+  /* Specify class=linenums on a pre to get line numbering */
+  ol.linenums {
+    margin: 0 0 0 33px; /* IE indents via margin-left */
+  }
+  ol.linenums li {
+    padding-left: 12px;
+    color: #2d4360;
+    line-height: 20px;
+    text-shadow: 0 1px 0 #fff;
+  }
+  .prettyprint-inverse ol.linenums li {
+    color:#eee;
+    text-shadow:0 -1px 0 #111;
+  }
+  .prettyprint-inverse .pln { color: #ddd;}

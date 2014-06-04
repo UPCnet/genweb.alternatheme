@@ -1,0 +1,95 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="genweb.alternatheme">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <grok:grok package=".browser" />
+
+  <includeDependencies package="." />
+  <include package="grokcore.component" file="meta.zcml" />
+
+  <include package=".browser" />
+  <include package=".portlets" />
+
+  <cmf:registerDirectory name="genwebtheme_images" recursive="True" />
+  <cmf:registerDirectory name="genwebtheme_custom" recursive="True" />
+
+  <!-- Includes from dependencies to make test pass -->
+  <include package="plone.formwidget.recaptcha" />
+  <include package="collective.recaptcha" />
+  <include package="plone.resource" file="meta.zcml"/>
+
+  <!-- Resource traversers -->
+  <adapter
+      name="components"
+      for="* zope.publisher.interfaces.IRequest"
+      provides="zope.traversing.interfaces.ITraversable"
+      factory=".traversal.ComponentsTraverser"
+      />
+
+  <adapter
+      name="gw"
+      for="* zope.publisher.interfaces.IRequest"
+      provides="zope.traversing.interfaces.ITraversable"
+      factory=".traversal.GenwebTraverser"
+      />
+
+  <plone:static
+      directory="components/bootstrap"
+      type="components"
+      name="bootstrap"
+      />
+
+  <plone:static
+      directory="components/fontawesome"
+      type="components"
+      name="fontawesome"
+      />
+
+  <plone:static
+      directory="components"
+      type="components"
+      name="root"
+      />
+
+  <plone:static
+      directory="static"
+      type="gw"
+      name="static"
+      />
+
+  <plone:static
+      directory="stylesheets"
+      type="gw"
+      name="stylesheets"
+      />
+
+  <plone:static
+      directory="js"
+      type="gw"
+      name="js"
+      />
+
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:jbot
+      directory="templates"
+      layer=".browser.interfaces.IGenwebTheme"
+  />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Genweb Reference Theme (alternative BS3-based)"
+      directory="profiles/default"
+      description="Installs the genweb.alternatheme package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

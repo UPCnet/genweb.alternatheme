@@ -1,0 +1,84 @@
+<footer id="peu" role="contentinfo"
+        tal:define="plone_view context/@@plone;
+                    view nocall:view | nocall: plone_view;
+                    dades context/@@genweb.utils/getDadesUnitat;"
+        i18n:domain="genweb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>&copy;
+          <a href="http://www.upc.edu" target="_blank">
+            <abbr rel="tooltip" data-placement="top" title="Universitat Politècnica de Catalunya · BarcelonaTech">UPC</abbr>
+            <img class="img_blank" src="/++gw++static/images/blank_blau.png"
+                 i18n:attributes="alt obrir_link_finestra_nova"></a>. <tal:signatura
+              content="python:getattr(viewlet.genweb_config(), 'signatura_unitat_%s' % viewlet.pref_lang(), '')">
+                Servei de Comunicació i Promoció
+            </tal:signatura>
+        </p>
+        <address tal:condition="python:getattr(viewlet.genweb_config(), 'contacte_al_peu', False)">
+          <p tal:condition="python:dades and not dades.get('error', False)">
+            <tal:adreca content="dades/adreca | nothing">
+              Edifici Til·lers. Jordi Girona, 31.
+            </tal:adreca>.
+            <tal:codi content="dades/codi_postal | nothing">
+                08034
+            </tal:codi>
+            <tal:localitat content="dades/localitat | nothing">
+              Barcelona
+            </tal:localitat> -
+            <abbr rel="tooltip" data-placement="top" title="Telèfon">
+              Tel.</abbr>:
+            <tal:tel content="dades/telefon | nothing">
+              +34 93 401 63 12
+            </tal:tel>
+          </p>
+        </address>
+      </div>
+      <div class="col-md-4" role="complementary" aria-labelledby="titol-sobre-el-web">
+        <h2 class="sr-only" id="titol-sobre-el-web"> Sobre el web </h2>
+        <ul class="pull-right sobreElWeb" role="menu"
+            tal:define="link viewlet/getLinksPeu" >
+          <li role="menuitem">
+            <a href="#"
+               tal:attributes="href link/rss">
+              <abbr rel="tooltip" data-placement="top" title="Really Simple Sindication"
+                    i18n:translate="genweb-rss">
+                      RSS
+              </abbr>
+            </a>
+          </li>
+          <li role="menuitem">
+            <a href="#" accesskey="8"
+               tal:attributes="href link/about"
+               i18n:translate="genweb-sobre_aquest_web">
+                Sobre aquest web
+            </a>
+          </li>
+          <li role="menuitem">
+            <a href="#" accesskey="0"
+               tal:attributes="href link/accessibility"
+               i18n:translate="genweb-accessibility">
+                Accessibilitat
+            </a>
+          </li>
+          <li role="menuitem" class="amunt">
+            <a rel="tooltip" data-placement="top" title="Inici de la pàgina"
+               tal:attributes="href python:viewlet.get_go_to_top_link(template, view)">
+              <img src="/++gw++static/images/amunt.png" alt="Inici de la pàgina">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--[if !IE]> -->
+<footer id="canvia-vista" role="complementary">
+  <p>
+    <a class="reView" data-defaultText="Versi&oacute; m&ograve;bil" data-coreText="Versi&oacute; d&apos;escriptori" href="javascript:void(0)">
+      Versi&oacute; d&apos;escriptori
+    </a>
+  </p>
+</footer>
+<!-- <![endif]-->

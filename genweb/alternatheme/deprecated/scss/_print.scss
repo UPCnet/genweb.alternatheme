@@ -1,0 +1,19 @@
+@media print {
+	@page { margin: 1.5cm; }
+
+ 	body {background: white; font-size: 12pt;}
+
+ 	* {color: #000; background-color: #fff; @include box-shadow(none); @include text-shadow(none);}
+ 	a {color:#08c; text-decoration: underline;}
+
+	#content a:link:after, #content a:visited:after {
+   		content: " (" attr(href) ") ";
+   		font-size: 90%;
+    }
+
+	.nav-collapse-eines, #portal-personaltools-wrapper, #portal-globalnav, #portal-breadcrumbs, #portal-column-one, .alert, #edit-bar, #viewlet-below-content-title, #viewlet-below-content, #peu .span4 {display: none !important;}
+
+	#portal-column-content {margin:0 !important; width:100% !important;}
+	#peu .span8 {width:100%;}
+
+}

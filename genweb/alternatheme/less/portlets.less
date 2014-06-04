@@ -1,0 +1,245 @@
+// TOTS els portlets
+// -------------------------
+.portlet {
+  .box-shadow(0 1px 4px rgba(0,0,0,.1));
+  border-radius:6px;
+  margin-bottom:20px;
+  border: 1px solid @table-border-color;
+  & h2 {
+    margin:0;
+    font-size:107%;
+    color:@gray;
+    border-bottom: 5px solid @genwebPrimary;
+    padding:10px 15px;
+    line-height:18px;
+    position:relative;
+    & i {
+      .opacity(75);
+      *position:absolute;
+      *top:10px;
+      *right:15px;
+    }
+  }
+  & ul:last-child {
+    border-bottom:0 !important;
+  }
+}
+.list-portlet {
+  margin: 0;
+  padding:0 5px 0 15px;
+  border-bottom: 1px solid @table-border-color;
+  & li {
+    border-top:1px solid lighten(@table-border-color, 20%);
+    *border-top:1px solid #e5e5e5;
+    margin-left: 0 !important;
+    padding: 8px 0 8px 18px !important;
+    margin-right:10px;
+    *display:inline-block;
+    &:first-child {
+      border-top:0;
+    }
+    & .smaller {
+      color: @gray;
+      white-space: nowrap;
+    }
+  }
+}
+.portlet-footer {
+  background: @gray-lighter;
+  display:block;
+  padding: 5px 10px 7px;
+  text-align: center;
+  border-radius:0 0 6px 6px;
+  border-top:1px solid @white;
+  position:relative;
+  font-size:92.3076923%;
+  & i {
+    .opacity(.5);
+    position:absolute;
+    left:10px;
+  }
+}
+/* les llistes s'extenen a l'arxiu de llistes*/
+
+// BANERS
+// -------------------------
+.portlet-baners {
+  .box-shadow(none);
+  border:0;
+}
+.portlet-baners li {
+  padding: 0 0 1em;
+  & a:hover img {
+    .box-shadow(0 0 5px rgba(0,123,192,.25));
+    border-radius:2px;
+  }
+}
+
+// NOTÍCIES AMPLIAT
+.portlet-ampliat {
+  & h3 {
+    padding:0 15px;
+    text-align:left;
+    color: @gray;
+  }
+  & .content-noticies {
+    padding: 0 15px;
+    margin-bottom: 0;
+    text-align:left;
+  }
+  & li > img {
+    margin: 0 0 10px;
+    .box-shadow(0 10px 5px -10px rgba(0, 0, 0, 0.25));
+  }
+  & .list-portlet {
+    margin:0 !important;
+    padding:0 !important;
+    &:before {
+      content:none;
+    }
+    & li {
+      border-color: @table-border-color;
+      padding:0 0 12px 0 !important;
+      margin: 0 !important;
+      text-align:center;
+      .box-shadow(0 -5px 10px -5px rgba(0, 0, 0, 0.1));
+      &:before {
+        content:none;
+      }
+      &:first-child {
+        .box-shadow(none);
+      }
+    }
+  }
+}
+/* adaptació imatge a protlet ample */
+.col-md-6 .portlet-ampliat li > img,
+.col-md-7 .portlet-ampliat li > img,
+.col-md-8 .portlet-ampliat li > img,
+.col-md-9 .portlet-ampliat li > img,
+.col-md-10 .portlet-ampliat li > img,
+.col-md-11 .portlet-ampliat li > img,
+.col-md-12 .portlet-ampliat li > img {
+  margin: 0 10px 5px 15px;
+  max-width:50%;
+  float:left;
+}
+
+// AGENDA (ESDEVENIMENTS)
+.portlet-esdeveniments ul {
+  margin-bottom:0;
+  border-bottom:1px solid @table-border-color;
+  & li {
+    position:relative;
+    border-top:1px solid lighten(@table-border-color, 20%);
+    *border-top:1px solid #e5e5e5;
+    margin:0 15px;
+    padding: 15px 0;
+    &:first-child {
+      border-top:0;
+    }
+  }
+  & a {
+    display:block;
+    padding-left:40px;
+    border-left: 3px solid @gray-lighter;
+    min-height: 36px;
+    &:hover {
+      border-color: @blue;
+    }
+  }
+  & time {
+    position:absolute;
+    left:12px;
+    top:18px;
+    font-size:153.846154%;
+    color:@gray-light;
+    font-weight:bold;
+    & abbr {
+      display:block;
+      font-size: 53.8461538462%;
+      font-weight: normal;
+      text-align: center;
+      color:@gray;
+      margin-top:-3px;
+    }
+  }
+}
+//Multievent
+.portlet-esdeveniments ul time {text-align:center;}
+.portlet-esdeveniments .multidate-before {padding-left:60px;}
+.portlet-esdeveniments .multidate time + time {margin-left:1.3em !important;}
+.portlet-esdeveniments .multidate time + time:before {content:"-";font-size: 70%;margin-left: -5px;float: left; margin-top:-2px;}
+.portlet-esdeveniments .multidate {font-size: 90%; }
+.portlet-esdeveniments .multidate time abbr {font-size:48%;}
+
+// ENQUESTA
+.portlet-enquesta {
+  & fieldset {
+    margin: 0 15px;
+  }
+  & legend {
+    font-size: 100%;
+    line-height:18px;
+    padding: 10px 0;
+  }
+  & form {
+    margin:0 15px 15px;
+  }
+  .progress {
+    position:relative;
+    & span {
+      color: black;
+      font-size: 84.6153846%;
+      right: 3px;
+      position: absolute;
+      text-shadow: 0 -1px rgba(255, 255, 255, 0.5);
+    }
+  }
+  & > p {
+    margin:0 15px 18px;
+    border-bottom:1px solid @table-border-color;
+    padding:10px 0;
+  }
+  & > ul {margin:0 15px;}
+}
+
+
+
+// PORTLET INVERSE per si de cas
+.portlet-inverse h2 {
+  background: @genwebPrimary;
+  border:0;
+  color:@gray-dark;
+  text-shadow: 0 1px rgba(255,255,255,.3);
+  border-radius:5px 5px 0 0;
+  & i {
+    .opacity(90);
+  }
+}
+h2.title-inverse {
+  color:@white;
+  text-shadow: 0 1px rgba(0,0,0,.3);
+  & i {
+    background-image: url("/++gw++static/images/gh-w.png");
+  }
+}
+
+// portlets secundaris (no es fan servir pero s'estilen)
+.portletCalendar {
+  & .ploneCalendar {
+    text-align: center; font-size: 85%; table-layout: fixed;
+    & td {height: 25px;}
+    & td:not(:empty) {background: #f2f2f2; border-radius:50px; text-shadow:0 1px #fff;}
+    & td.event, td.todayevent {background: #08c; text-shadow:0 -1px #06a;
+      & a {color: #fff;}}
+    & td.todayevent {
+      }
+    & td.todaynoevent {background: #ccc;
+      & strong {color:#000;}}
+  }
+}
+
+// Sistema
+#portlet-prefs {.box-shadow(none);}
+.portlet > .pad {border-bottom: 1px solid @table-border-color;}

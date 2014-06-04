@@ -1,0 +1,12 @@
+<p class="sr-only">
+    <a accesskey="S" href="#content"
+       i18n:domain="genweb"
+       i18n:translate="">
+        Vés al contingut (premeu Retorn)
+    </a></p>
+<header id="portal-header" role="banner"
+        tal:define="genweb_config context/@@gwconfig;
+                    class_show_image python:genweb_config.treu_imatge_capsalera and 'no-image' or None"
+        tal:attributes="class class_show_image | nothing">
+    <div tal:replace="structure provider:plone.portalheader" />
+</header>

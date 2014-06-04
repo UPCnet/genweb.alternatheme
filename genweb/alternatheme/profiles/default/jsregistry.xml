@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
+ <!-- Disable modernizr.js, enable a more updated one -->
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
+    expression="" id="modernizr.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++components++root/modernizr/modernizr.js" inline="False"
+    insert-after="modernizr.js" />
+
+ <!-- Enable overlays, as many configlets rely in them. Try to find a better solution -->
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++plone.app.jquerytools.overlayhelpers.js"
+    inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="popupforms.js" inline="False"/>
+
+ <!-- Disable JS not needed -->
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
+    expression="" id="dropdown.js" inline="False"/>
+
+ <!-- In case we use Tiny 3.x for removing old Tiny init -->
+ <!-- <javascript id="tiny_mce_init.js" remove="True"/> -->
+
+ <!-- Add new JS -->
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+    expression="" id="++components++bootstrap/dist/js/bootstrap.min.js" inline="False"/>
+</object>
+
+<!-- Revisar/recolocar
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="collective.js.jqueryui.custom.min.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="nocall: object/@@collage_view|nothing"
+    id="++resource++collage-resources/collage.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression=""
+    id="++resource++plone.formwidget.recaptcha/recaptcha_ajax.js"
+    inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jsi18n.js" inline="False"/>
+ -->

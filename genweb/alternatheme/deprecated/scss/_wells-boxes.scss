@@ -1,0 +1,159 @@
+// POUS
+// -------------------------
+
+// Base class
+.well {
+  min-height: 20px;
+  padding: 18px;
+  margin-bottom: 20px;
+  background-color: $wellBackground;
+  border: 1px solid darken($wellBackground, 12%);
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }
+}
+
+// Sizes
+.well-large {
+  padding: 24px;
+  @include border-radius(6px);
+}
+.well-small {
+  padding: 9px;
+  @include border-radius(3px);
+}
+
+
+
+
+.well {
+  min-height: 20px;
+  padding: 18px;
+  margin-bottom: 20px;
+  background-color: $wellBackground;
+  border: 1px solid darken($wellBackground, 15%);
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }
+}
+.well-inverse {
+  @extend .well;
+  background:$grayDarker;
+  color:$grayLighter;
+  border: 1px solid $black; 
+}
+.well-gradient {
+  @include gradient-vertical($wellBackground, $white);
+  &.well-inverse {
+    @include gradient-vertical($black, $navbarInverseBackgroundHighlight);
+  }
+}
+
+
+// CAIXES
+// -------------------------
+.box {
+  min-height: 20px;
+  padding: 18px;
+  margin-bottom: 20px;
+  background-color: $white;
+  border: 1px solid darken($wellBackground, 15%);
+  border-bottom-color: darken($wellBackground, 25%);
+  @include border-radius(4px);
+  @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }  
+}
+.box-inverse {
+  @extend .box;
+  background:$grayDarker;
+  color:$grayLighter;
+  border: 1px solid $black;
+}
+.box-gradient {
+  @include gradient-vertical($white, $wellBackground);
+  &.box-inverse {
+    @include gradient-vertical($black, $grayDark);
+  }
+}
+.box-example {
+  position:relative;
+  padding-top:24px;
+  &:after {
+    background-color: #f7f7f7;
+    border: 1px solid darken($wellBackground, 12%);    
+    @include border-radius(4px 0 4px 0);
+    @extend .muted; //color gris clar
+    content:"exemple";
+    font-size:92.3076923%;
+    left:-1px;
+    top:-1px;
+    padding:2px 7px 3px;
+    position:absolute;
+  }
+  &.box-inverse {
+    &:after {
+      background-color:$black;
+      border-color:$gray;
+      border-top:0;
+      border-left:0;
+      color:$white;
+    }
+  }
+}
+html[lang="en"] .box-example:after {content:"example";}
+html[lang="es"] .box-example:after {content:"ejemplo";}
+
+
+// MIDES
+// -------------------------
+.well-large, .box-large {
+  padding: 36px;
+  @include border-radius(8px);
+}
+.well-small, .box-small {
+  padding: 9px;
+  @include border-radius(2px);
+  &.box-example:after {
+    font-size:84.6153846%;
+    @include border-radius(2px 0 2px 0);    
+    padding:0 4px 1px;
+  }
+}
+
+
+// FITXES
+// -------------------------
+.sheet {
+  @extend .lead-large;
+  font-size: 100%;
+  background: #fcfcfc;
+  color: $grayDark;
+  border-top: 1px solid #ddd;
+  border-right:20px solid lighten($genwebPrimary,35%);
+  padding:8px 12px;
+  position:relative;
+  &:before {
+    content: "*";
+    content: image-url("sheet.png");
+    font-size:300%;
+    position:absolute;
+    right:-19px;
+    top:-7px;
+  }
+  &:after {
+    margin: 0 0 -14px !important;
+    position:absolute;
+    bottom:8px;
+    left:10px;
+    width:100%;
+  }
+}

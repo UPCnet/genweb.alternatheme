@@ -1,0 +1,151 @@
+
+<tal:personaltools condition="not: view/anonymous">
+<h1 class="sr-only" id="titol-eines-usuari"> Eines d'usuari </h1>
+<nav id="portal-personaltools-wrapper" role="toolbar" aria-labelledby="titol-eines-usuari"
+     i18n:domain="genweb">
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <!-- <div class="navbar-inner"> -->
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-edit">
+          <i class="icon-user icon-white"></i><span id='user-name'> <tal:username content="view/user_name"> Rafael Ojeda Rojas </tal:username></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-collapse-edit">
+          <h2 class="sr-only" id="titol-eines-usuari"> Menú d'usuari </h2>
+          <ul class="nav navbar-nav" role="menu" aria-labelledby="titol-menu-usuari">
+            <li class="dropdown" role="menuitem" tal:attributes="id string:${view/user_name}">
+              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                <img tal:attributes="src string:${view/getPortraitMini}" aria-hidden="true"
+                     alt=""
+                     class="user" />
+                <span id='user-name'><tal:username content="view/user_name"> Rafael Ojeda Rojas </tal:username></span>
+                <b aria-hidden="true" class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/dashboard">
+                       <i class="icon-desktop"></i>
+                       <tal:dashboard i18n:translate="genweb-escriptori">
+                          Dashboard</tal:dashboard>
+                </a></li>
+                <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/@@personal-information">
+                       <i class="icon-user"></i>
+                       <tal:profile i18n:translate="genweb-perfil">
+                          Profile</tal:profile>
+                </a></li>
+                <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/@@personal-preferences">
+                       <i class="icon-cog"></i>
+                       <tal:preferences i18n:translate="genweb-preferencies">
+                          Preferències d'usuari</tal:preferences>
+                </a></li>
+                <li aria-hidden="true" class="divider"></li>
+                <li role="menuitem" class="btn-menu-adjust">
+                  <a tal:attributes="href string:${view/logout_link}"
+                     i18n:attributes="title genweb-logout"
+                     class="btn btn-danger" href="#" role="button">
+                    <i class="icon-off icon-white"></i>
+                    <tal:logout i18n:translate="genweb-logout">
+                          Logout</tal:logout>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <tal:co tal:condition="view/pam_installed">
+            <li role="menuitem"><a tal:condition="view/showRootFolderLink"
+                   tal:attributes="href string:${view/portal_url}/${view/current_language}/folder_contents">
+                   <tal:rootFolder i18n:translate="genweb-accesarrel">
+                      Root folder</tal:rootFolder>
+            </a></li>
+            <li role="menuitem"><a tal:condition="view/showRootFolderLink"
+                   tal:attributes="href string:${view/portal_url}/shared/folder_contents">
+                   <tal:sharedFolder i18n:translate="genweb-sharedfolder">
+                      Shared folder</tal:sharedFolder>
+            </a></li>
+            </tal:co>
+            <tal:co tal:condition="not view/pam_installed">
+            <li role="menuitem"><a tal:condition="view/showRootFolderLink"
+                   tal:attributes="href string:${view/portal_url}/${view/current_language}/folder_contents">
+                   <tal:rootFolder i18n:translate="genweb-accesarrel">
+                      Root folder</tal:rootFolder>
+            </a></li>
+            </tal:co>
+            <li role="menuitem"><a tal:condition="view/canManageSite"
+                   tal:attributes="href string:${view/portal_url}/@@overview-controlpanel">
+                   <tal:managesite i18n:domain="plone" i18n:translate="Site Setup">
+                      Site setup</tal:managesite>
+            </a></li>
+            <li role="menuitem" tal:condition="view/canManageSite">
+              <a tal:attributes="href string:${view/portal_url}/@@genweb-controlpanel">
+                <tal:managesite i18n:translate="genWeb UPC settings" i18n:domain="plone">
+                      Genweb UPC Settings</tal:managesite>
+                <img i18n:attributes="alt obrir_link_finestra_nova"
+                    class="img_blank"
+                    src="++resource++cpgenweb.png">
+              </a>
+
+            </li>
+
+            <li role="menuitem">
+              <a href="https://genweb.upc.edu/formacio-i-ajuda" target="_blank" accesskey="6">
+              <tal:help i18n:translate="genweb-ajuda">Help</tal:help>
+              <img i18n:attributes="alt obrir_link_finestra_nova"
+                    class="img_blank"
+                    src="/++gw++static/images/blank_blanc.png">
+              </a>
+            </li>
+            <li role="menuitem">
+              <a tal:replace="structure view/forgeResizerURLCall"></a>
+              <!-- <tal:help i18n:translate="genweb-vistes">Vistes</tal:help> -->
+            </li>
+          </ul>
+          <h2 class="sr-only" id="titol-menu-eines-genweb"> Menú d'eines Genweb UPC </h2>
+
+          <ul class="nav navbar-nav navbar-right" role="toolbar" aria-labelledby="titol-menu-eines-genweb">
+            <li role="menuitem" class="visible-desktop visible-tablet" tal:condition="view/canManageSite">
+              <a href="javascript:();" rel="popover" data-placement="bottom" data-animation="true" data-trigger="hover" data-content="Idioma establert com a defecte al lloc web. Potser no és el mateix que hi ha publicat al web segons la configuració del panell de control del Genweb" data-original-title="Idioma per defecte"><span class="label label-danger"><tal:co tal:content="view/default_site_lang"></tal:co></span></a>
+            </li>
+
+            <!--[if !IE]> -->
+<!--             <li role="menuitem" class="visible-desktop visible-tablet"><a href="javascript:();" rel="popover" data-placement="bottom" data-animation="true" data-trigger="hover" data-content="Les vistes pretenen ajudar a fer millors versions de mòbil i de tauleta del vostre web.<br /> Només està disponible per a navegadors moderns i encara en <strong>fase beta</strong>. En cap cas és la versió real de com es veurà el web mobilitzat sinó només una simulació.<br><br><span class='s text-info'>Seleccioneu vista mòbil o tauleta i només heu de clicar a la icona pantalla per tornar a la vista normal</span>" data-original-title="<strong>Vistes</strong> Beta"><span class="label label-important ">Vistes Beta</span></a></li>
+            <li role="menuitem" class="visible-desktop visible-tablet"><a class="userScreen" href="javascript:void(0)" rel="tooltip" data-placement="bottom" title="Screenview"><span class="sr-only">Screen</span></a></li>
+            <li role="menuitem" class="visible-desktop visible-tablet"><a class="userTablet " href="javascript:void(0)" rel="tooltip" data-placement="bottom" title="Tabletview"><span class="sr-only">Tablet</span></a></li>
+            <li role="menuitem" class="visible-desktop visible-tablet"><a class="userMobile " href="javascript:void(0)" rel="tooltip" data-placement="bottom" title="Mobileview"><span class="sr-only">Mobile</span></a></li> -->
+            <!-- <![endif]-->
+            <li aria-hidden="true" class="divider-vertical hidden-phone"></li>
+            <li role="menuitem" class="dropdown hidden-phone"
+                tal:define="notificacions view/getNotificacionsGW"
+                tal:condition="notificacions">
+              <a href="#" data-toggle="dropdown"
+                 tal:attributes="class string:dropdown-toggle userGenweb${notificacions/nou}">
+                  <span class="sr-only">Genweb UPC</span>
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <tal:notificacionsmenu repeat="notificacio notificacions/elements">
+                  <li role="menuitem"
+                      tal:condition="notificacio/li-class"
+                      tal:attributes="class notificacio/li-class"
+                      tal:content="notificacio/text">
+                        Header de conjunt de notificacions
+                  </li>
+                  <li role="menuitem"
+                      tal:condition="not: notificacio/li-class">
+                        <a tal:attributes="href notificacio/url">
+                          <i tal:attributes="class notificacio/i-class"></i>
+                          <tal:notificacio content="notificacio/text">Notificació</tal:notificacio>
+                          <img class="img_blank"
+                               src="/++gw++static/images/blank_blanc.png"
+                               tal:condition="notificacio/target-blank"
+                               i18n:attributes="alt obrir_link_finestra_nova">
+                          <span class="badge badge-warning"
+                                tal:condition="notificacio/nou">nou</span>
+                        </a>
+                  </li>
+                </tal:notificacionsmenu>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</nav>
+</tal:personaltools>

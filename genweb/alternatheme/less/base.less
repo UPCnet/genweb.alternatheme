@@ -1,0 +1,271 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Genweb colors
+// -------------------------
+@genwebPrimary:         #007bc0;
+@genwebTitles:          #557C95;
+
+
+// Accent colors
+// -------------------------
+@blue:                  #007bc0;
+@blueDark:              #005ea0;
+@cyan:          #30a2c3;
+@green:                 #72a31d;
+@red:                   #a62e1f;
+@yellow:                #bb900d;
+@orange:                #f89406;
+@pink:                  #c6218b;
+@purple:                #8952ab;
+@white:                 #fff;
+@black:                 #000;
+@navbar-inverse-highlight-bg: #444;
+
+.container {
+  @media (min-width: @screen-lg-min) {
+    padding-left: 0; padding-right: 0;
+  }
+}
+
+// ESTATS
+// -------------------------
+.state-published {color: @blue;}
+.state-intranet {color: @purple;}
+.state-pending {color: darken(@orange, 5%);}
+.state-draft, .state-visible {color: @green;}
+.state-private {color: @red;}
+.state-restricted-to-managers {color: @gray-darker;}
+
+
+// USUARI
+// -------------------------
+.user {.opacity(.8); width:26px; height:26px; border:.1em solid darken(spin(@blue, -120),5%); margin: -.55em 0; position: relative;
+  image-rendering: optimizeQuality; -ms-interpolation-mode: bicubic; left:-6px; top:-1px;}
+.dropdown-menu li > a.btn-danger:hover, .dropdown-menu .active > a.btn-danger:hover {background-color: #BD362F;}
+.userScreen, .userTablet, .userMobile, .userGenweb {background: image-url("sprite_usuari.png") transparent no-repeat center top; height: 1.5em; width:1.5em;}
+.userScreen {background-position: center -40px;}
+.userTablet {background-position: center -140px;}
+.userMobile {background-position: center -240px;}
+.userGenweb {background-position: 10px -340px; width:2em;}
+.userScreen:hover {background-position: center 10px;}
+.userTablet:hover {background-position: center -90px;}
+.userMobile:hover {background-position: center -190px;}
+.userGenweb:hover, .open .userGenweb {background-position: 10px -290px;}
+  .dropdown .userGenweb .caret { margin-left: 24px;}
+#portal-personaltools-wrapper .container {box-shadow: 0 -8px 5px 5px rgba(255, 255, 255, 0.05);}
+#portal-personaltools-wrapper .nav {margin:0!important;}
+#portal-personaltools-wrapper .nav .img_blank {.opacity(.7);}
+#portal-personaltools-wrapper .nav a:hover .img_blank {.opacity(1);}
+.btn-menu-adjust a {margin:3px 15px !important; color:@white;}
+// Hover state
+// -----------
+.dropdown-menu li.btn-menu-adjust > a:hover,
+.dropdown-menu li.btn-menu-adjust > a:focus,
+.dropdown-submenu:hover > a {
+  text-decoration: none;
+  color: @dropdown-link-hover-color;
+  background-color: @btn-danger-bg;
+  #gradient.vertical(@btn-danger-bg, darken(@btn-danger-bg, 5%));
+}
+.btn-menu-adjust  {text-align:center;}
+/*ajusta imatges icos en menús per a hovers */
+.dropdown-menu a:hover [class^="icon-"], .dropdown-menu a:hover [class*=" icon-"] {
+background-image: image-url("gh-w.png") !important;
+}
+
+
+// PORTAL HEADER
+// -------------------------
+#portal-header {
+  border-bottom:1px solid #d7d5d2;
+  border-top:5px solid desaturate(lighten(@genwebPrimary,40%), 85%);
+    background: #fcfcfc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f7f7f7 0%, #ffffff 25%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(25%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f7f7f7 0%,#ffffff 25%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f7f7f7 0%,#ffffff 25%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f7f7f7 0%,#ffffff 25%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f7f7f7 0%,#ffffff 25%); /* W3C */
+}
+
+#portal-personaltools-wrapper + p + #portal-header {padding-top: 51px;}
+  #portal-header .container {border-top:5px solid @genwebPrimary; margin-top:-5px; border-bottom:1px solid #796e64; margin-bottom:-1px;}
+  #portal-header h1.pull-left {margin-bottom:0;}
+
+.titol-espai {margin-top:0;
+  & h1 {font-weight:normal; margin:0;}
+  & a {color:#333; text-shadow: 0 1px 1px rgba(0,0,0,.1); display:table !important; min-height:49px; width:100%;
+    & span {display:table-cell; vertical-align:middle; padding:5px 0;}
+    &:hover {color:@blue; text-decoration:none;}
+  }
+}
+.logoPropi {height:49px;display:table-cell; vertical-align:middle;min-width: 49px; padding:5px 0;}
+
+#eines {margin:15px 0 0 0;
+  & > li > a {
+      border-radius: 4px;
+      margin-top: 0px;
+      padding-bottom: 7px;
+      padding-top: 6px;
+  }
+  & .input-append {
+      border-left: 1px dotted @table-border-color;
+      margin-left: 2px;
+    padding-left: 5px;
+  }
+  & .adjust-langs {min-width:87px !important;}
+}
+
+.gwsearch {
+  margin: 15px 0 0 0;
+  & .input-group {
+      border-left: 1px dotted @table-border-color;
+      margin-left: 2px;
+      padding-left: 5px;
+  }
+}
+
+.gwsearch input.cercaupc {
+  // width: 124px !important;
+  .transition(all 0.5s ease-in-out) !important;
+}
+
+.gwsearch input.cercaupc:focus {
+  width: 200px !important;
+  .transition(all 0.5s in-out) !important;
+}
+
+#eines input.cercaupc {
+  width: 124px !important;
+  .transition(all 0.5s ease-in-out) !important;
+}
+
+#eines input.cercaupc:focus {
+  width: 200px !important;
+  .transition(all 0.5s in-out) !important;
+}
+
+// IMATGE DE CAPCALERA
+// -------------------------
+.header-image {
+  background-image: image-url("capcalera.jpg");
+  margin-top:0 !important;
+  height:65px;
+  overflow:hidden;
+  position: relative;
+  border-radius: 5px 5px 0 0;
+  .box-shadow(0 0 5px rgba(0,0,0,.15));
+}
+/* L3 */
+.l3-image {
+  height:65px;
+}
+/* L2 */
+.l2-image {
+  margin-left:250px !important;
+  height:50px;
+  margin-bottom:-1px;
+  overflow:visible;
+  &:before {
+    content:" ";
+    background:@genwebPrimary;
+    height: 5px;
+      margin-left: -250px;
+      position: absolute;
+      top: 45px;
+      width: 222px;
+  }
+}
+/* NO-IMG */
+.no-image .header-image { display:none !important;}
+/* ajusta menú L3*/
+#portal-header.no-image .container {padding-bottom:20px;}
+#portal-header.no-image + #portal-globalnav .navbar-inner {margin-top:-20px;}
+#portal-header:not(.no-image) + #portal-globalnav .navbar-inner {border-radius: 0 0 4px 4px !important; margin-top:-1px;}
+
+// Breadcrumb
+#portal-breadcrumbs {
+  h2 { margin: 0; font-size: 14px; display: inline-block; }
+  ol { display: inline-block; }
+}
+
+// CENTRE
+// -------------------------
+#content-area {padding-bottom:2em; margin-top:1.5em;}
+#portal-breadcrumbs + #content-area { margin-top:0; }
+#edit-bar {
+  border-bottom: 1px solid #CCCCCC;
+    box-shadow: 0 -10px 12px -18px black inset;
+    margin-bottom:18px;
+    & .nav-tabs {
+      border-bottom:0;
+      box-shadow:none;
+      margin:0;
+    }
+    & .nav-pills {margin:0;}
+    & .dropdown-toggle .label,
+    & .dropdown-toggle .badge {
+      font-size:100%;
+    }
+}
+
+
+// BANDA LOGOS
+// -------------------------
+#bandaLogos {border-top:1px solid desaturate(lighten(@genwebPrimary,40%), 85%); box-shadow: 0 -10px 20px rgba(0, 0, 0, .03);
+  & .container {border-top:1px solid darken(@genwebPrimary,25%); margin-top:-1px;}
+}
+.llistatLogos {margin:0 auto; list-style:none; text-align:center; padding-top: 1em;
+  & li {display:inline-block; margin:0 .5em 1em;}
+  & a {margin:0 1.5em; display: block;}
+  & img {max-height: 100px;}
+}
+
+
+// PEU
+// -------------------------
+#peu {background:#f2f2f2; border-top:5px solid desaturate(lighten(@genwebPrimary,40%), 85%); font-size:92.3076923%;
+  & .container {border-top:5px solid @genwebPrimary; margin-top:-5px;}
+    & p {margin:6px 0 0;}
+  & .amunt img {.opacity(.7);}
+  & .amunt a:hover img {.opacity(1);}
+  & address {color: @gray;
+    & p {margin: 0;}
+  }
+}
+
+.sobreElWeb li {display: inline-block; line-height: 0;}
+  .sobreElWeb li:before {
+    content:"."; font-size:52px; position: relative; line-height:0; top:-.01em; left:-1px;
+    color: desaturate(@genwebPrimary, 80%);
+  }
+  .sobreElWeb li:first-child:before {content:""; font-size:52px; position: relative; line-height:0; top:.25em;}
+  .sobreElWeb li:last-child:before {content:" __ "; font-size:13px; position: relative; line-height:0; top:-.35em; padding:0 2px 0 3px;}
+  #peu .amunt {position:relative; top:3px;}
+  #peu .amunt div.tooltip {margin-top: -21px !important; margin-left:6px !important;}
+
+
+// VISTA ESCRIPTORI
+// -------------------------
+#canvia-vista {
+  padding:0;
+  margin-left:-10px;
+  margin-right:-10px;
+    display:block;
+    & p {margin:0 !important;}
+  & a {
+    background:image-url("vistabg.png") #666;
+      text-align: center;
+      .box-shadow(inset 0 10px 10px -5px rgba(0,0,0,.5));
+    padding:10px;
+      color: @white;
+    height:auto;
+    width:auto;
+    display:block;
+    background-position: left 3px;
+  }
+}
+.review {display:none;}

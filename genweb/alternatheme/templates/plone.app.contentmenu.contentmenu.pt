@@ -1,0 +1,109 @@
+<ul id="contentActionMenus"
+    class="nav nav-pills pull-right clearfix"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    tal:define="menu view/menu; dummy menu/reverse;
+                utils context/@@genweb.utils"
+    tal:condition="view/available"
+    i18n:domain="genweb">
+
+    <li class="dropdown" tal:repeat="menuItem menu">
+
+      <tal:actionmenu tal:define="submenu menuItem/submenu">
+
+          <a tal:attributes="id menuItem/extra/id;
+                             href menuItem/action;
+                             title menuItem/description"
+             tal:omit-tag="not:menuItem/action"
+             i18n:attributes="title;"
+             href="#"
+             data-toggle="dropdown"
+             class="dropdown-toggle">
+                <span tal:omit-tag="menuItem/action"
+                      class="noMenuAction">
+                  <span tal:content="menuItem/title"
+                        i18n:translate="">
+                      Title
+                  </span>
+                  <span tal:condition="menuItem/extra/stateTitle | nothing"
+                        tal:attributes="class python:'label ' + utils.get_state_label_class_mapping().get(menuItem['extra']['state'], 'default')"
+                        tal:content="menuItem/extra/stateTitle"
+                        i18n:translate="">
+                      State title
+                  </span>
+                </span>
+                <b tal:omit-tag="not:menuItem/action"
+                   class="caret"></b>
+          </a>
+
+          <ul class="dropdown-menu pull-right actionMenuContent"
+              tal:condition="not:menuItem/extra/hideChildren | not:submenu | nothing">
+                  <tal:comment replace="nothing"><!-- This is the added grey title on the display menu views --></tal:comment>
+                  <li class="nav-header"
+                      tal:condition="python:menuItem['extra']['id'] == 'plone-contentmenu-display'"
+                      i18n:translate="genweb_content_actions_vista_de_carpeta"
+                      i18n:domain="genweb">
+                        Folder views
+                  </li>
+                <tal:block repeat="subMenuItem submenu">
+                  <tal:comment replace="nothing"><!-- Shitty solution as the translation of this element is fixed pythonically to the i18n domain plone--></tal:comment>
+                  <li class="nav-header actionSeparator"
+                      tal:condition="python:subMenuItem['extra']['id'] == 'contextSetDefaultPage'"
+                      i18n:translate="genweb_content_actions_content_as_view"
+                      i18n:domain="genweb">
+                        Select default content
+                  </li>
+                  <tal:comment replace="nothing"><!-- This is the general li element --></tal:comment>
+                  <li tal:define="list_class python:utils.get_proper_menu_list_class(subMenuItem)"
+                      tal:attributes="class list_class | nothing">
+                    <a href="#"
+                       tal:condition="subMenuItem/action"
+                       tal:attributes="href subMenuItem/action;
+                                       title subMenuItem/description;
+                                       id subMenuItem/extra/id | nothing;
+                                       class subMenuItem/extra/class | nothing"
+                       i18n:attributes="title">
+                        <i class="icon-X"
+                          tal:attributes="class string:icon-${subMenuItem/extra/id}">
+                        </i>
+                        <tal:comment replace="nothing"><!-- Shitty solution as the translation of this element is fixed pythonically to the i18n domain plone--></tal:comment>
+                        <span tal:condition="python:subMenuItem['extra']['id'] == 'contextSetDefaultPage'"
+                              i18n:translate="label_choose_item">
+                              The elusive title of the choose menu
+                        </span>
+                        <span tal:condition="python:subMenuItem['extra']['id'] == 'folderChangeDefaultPage'"
+                              i18n:translate="label_change_default_item">
+                              Another elusive title of the choose menu
+                        </span>
+                        <tal:comment replace="nothing"><!-- The general item, excluding exceptions --></tal:comment>
+                        <span tal:condition="python:not subMenuItem['extra']['id'] == 'contextSetDefaultPage' and
+                                                    not subMenuItem['extra']['id'] == 'folderChangeDefaultPage'"
+                              tal:content="structure subMenuItem/title"
+                              i18n:translate=""
+                              class="subMenuTitle">
+                            Title
+                        </span>
+                    </a>
+                  </li>
+                  <li class="nav-header"
+                      tal:condition="not:subMenuItem/action"
+                      tal:attributes="id subMenuItem/extra/id | nothing;">
+                      tipus, no action
+                      <img width="16"
+                           height="16"
+                           alt=""
+                           tal:condition="subMenuItem/icon"
+                           tal:attributes="src subMenuItem/icon;
+                                           title subMenuItem/description"
+                           i18n:attributes="alt;"/>
+                      <span tal:content="structure subMenuItem/title"
+                            i18n:translate=""
+                            class="subMenuTitle">
+                          Title
+                      </span>
+                  </li>
+                </tal:block>
+            </ul>
+      </tal:actionmenu>
+    </li>
+</ul>

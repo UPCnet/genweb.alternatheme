@@ -1,0 +1,20 @@
+<tal:block condition="viewlet/canManageSite">
+    <div i18n:domain="genweb">
+        <p class="portalMessage warn" tal:condition="viewlet/isEventSent">
+            <strong>ATENCIÓ:</strong> Aquesta activitat ja s'ha enviat a l'Agenda de la UPC.
+        </p>
+        <form method="get" tal:attributes="action string:${context/absolute_url}/send-event">
+            <div i18n:translate="important_buttons">
+                <input
+                    type="submit"
+                    class="btn btn-success"
+                    value="Envia a l'Agenda general de la UPC"
+                    i18n:attributes="value button_sendevent"
+                    i18n:name="sendevent_button"
+                />
+            </div>
+        </form>
+        <p>Per enviar l'esdeveniment a l'Agenda general de la UPC premeu el botó.</p>
+        <br />
+    </div>
+</tal:block>

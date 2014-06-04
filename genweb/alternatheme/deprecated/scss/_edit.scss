@@ -1,0 +1,16 @@
+/*
+
+// CSS QUE VOLEM QUE ES 
+// MOSTRIN EN EL TINY
+// ----------------------
+
+// DEPRECATED VISIBLES EN EDICIÓ
+body.mceContentBody .titular1,
+body.mceContentBody .titular2,
+body.mceContentBody .titular3 {
+	@include box-shadow(0 0 5px red);
+	&:after {content:"Obsolet"; color:white; background:red;}
+}
+
+
+*/
