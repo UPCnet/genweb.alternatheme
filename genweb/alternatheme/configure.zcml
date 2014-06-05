@@ -83,6 +83,14 @@
       layer=".browser.interfaces.IGenwebTheme"
   />
 
+  <!-- Addon packages resource overrides -->
+  <!-- Custom jsi18n.js for including a trigger -->
+  <browser:resource
+    name="jsi18n.js"
+    file="static/js/jsi18n.js"
+    layer=".browser.interfaces.IGenwebTheme"
+    />
+
   <genericsetup:registerProfile
       name="default"
       title="Genweb Reference Theme (alternative BS3-based)"

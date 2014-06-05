@@ -93,7 +93,7 @@
 
 <section id="content-area">
   <div class="container">
-        <div class="row">
+        <div id="portal-columns" class="row">
             <tal:notajax tal:condition="not:ajax_load">
                 <div id="portal-column-one"
                     class="col-md-3"

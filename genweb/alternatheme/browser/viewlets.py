@@ -210,6 +210,7 @@ class gwSendEvent(viewletBase):
     def canManageSite(self):
         return checkPermission("plone.app.controlpanel.Overview", self.portal())
 
+
 class gwGlobalSectionsViewlet(GlobalSectionsViewlet, viewletBase):
     grok.name('genweb.globalsections')
     grok.viewletmanager(IPortalTop)
@@ -370,3 +371,10 @@ class TitleViewlet(TitleViewlet, viewletBase):
             self.site_title = u"%s &mdash; %s" % (genweb_title, marca_UPC)
         else:
             self.site_title = u"%s &mdash; %s &mdash; %s" % (page_title, genweb_title, marca_UPC)
+
+
+class socialtoolsViewlet(viewletBase):
+    grok.name('genweb.socialtools')
+    grok.template('socialtools')
+    grok.viewletmanager(IAboveContentTitle)
+    grok.layer(IGenwebTheme)

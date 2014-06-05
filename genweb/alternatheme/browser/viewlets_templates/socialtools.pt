@@ -1,0 +1,21 @@
+<tal:con i18n:domain="genweb">
+
+  <div class="pull-right">
+    <a class="share_popover" href="#"
+      data-placement="left" data-original-title="Share"
+      data-contentwrapper=".share_content" data-html="true">
+      <img tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_share.png"
+           i18n:attributes="title Comparteix; alt Comparteix;"/>
+    </a>
+  </div>
+
+  <div class="share_content" style="display: none;">
+    <a target="_blank" href="https://plus.google.com/up/?continue=https://plus.google.com/share?url&type=st&gpsrc=frameless&rsz=1&client=3"><img style="margin-right: 5px;" tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_googleplus.png;" i18n:attributes="title comparteix_google; alt comparteix_google" /></a>
+    <a target="_blank" href="https://www.facebook.com/login.php?next=http%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%26display%3Dpopup&display=popup"><img style="margin-right: 5px;" tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_facebook.png;" i18n:attributes="title comparteix_facebook; alt comparteix_facebook"/></a>
+    <a target="_blank" href="https://www.linkedin.com/reg/join?"><img style="margin-right: 5px;" tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_linkedin.png" i18n:attributes="alt comparteix_linkedin; title comparteix_linkedin"/></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?"><img style="margin-right: 5px;" tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_twitter.png" i18n:attributes="title comparteix_twitter; alt comparteix_twitter"/></a>
+    <a target="_blank" href="javascript:window.print()"><img style="margin-right: 5px;" tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_print.png" i18n:attributes="title Print; alt Print"/></a>
+    <a target="_blank" href="javascript:location.href='mailto:?SUBJECT=Ha compartit amb tu:'+document.title+'&amp;BODY='+escape(location.href);void 0"><img tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_email.png" i18n:attributes="title send_mail; alt send_mail"/></a>
+  </div>
+
+</tal:con>

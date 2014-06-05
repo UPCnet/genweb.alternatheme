@@ -62,9 +62,10 @@
             </a>
           </li>
           <li role="menuitem" class="amunt">
-            <a rel="tooltip" data-placement="top" title="Inici de la pàgina"
-               tal:attributes="href python:viewlet.get_go_to_top_link(template, view)">
-              <img src="/++gw++static/images/amunt.png" alt="Inici de la pàgina">
+            <a rel="tooltip" data-placement="top"
+               tal:attributes="href python:viewlet.get_go_to_top_link(template, view)"
+               i18n:attributes="title inici_page;alt inici_page;">
+              <img src="/++genweb++static/images/amunt.png">
             </a>
           </li>
         </ul>

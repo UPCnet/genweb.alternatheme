@@ -4,6 +4,7 @@ import logging
 
 
 def UninstallGWT(context):
+    """Not used"""
     if context.readDataFile('genweb.alternatheme_various.txt') is None:
         return
 

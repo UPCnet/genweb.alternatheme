@@ -6,7 +6,7 @@
                 type="submit"
                 class="btn btn-success"
                 name="genweb.alternatheme.viewlet.marcar_important"
-                value="Marca com a improtant"
+                value="Marca com a important"
                 i18n:attributes="value button_important"
                 i18n:name="important_button"
             />
