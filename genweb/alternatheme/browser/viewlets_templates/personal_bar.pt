@@ -64,7 +64,7 @@
               <tal:ispamroot condition="view/is_root">
                 <tal:langs repeat="lang view/get_available_langs">
                   <li role="menuitem"><a tal:condition="view/showRootFolderLink"
-                         tal:attributes="href string:${view/portal_url}/${view/lang}/folder_contents"
+                         tal:attributes="href string:${view/portal_url}/${lang}/folder_contents"
                          tal:content="lang">
                          Lang code
                 </a></li>
