@@ -5,6 +5,10 @@
     compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="modernizr.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="False"
+    expression="" id="++bootstrap++js/modernizr-2.6.1.min.js" inline="False"
+    insert-after="modernizr.js" />
+ <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++components++root/modernizr/modernizr.js" inline="False"
     insert-after="modernizr.js" />
