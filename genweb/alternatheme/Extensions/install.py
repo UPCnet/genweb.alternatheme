@@ -2,10 +2,10 @@ from Products.CMFCore.utils import getToolByName
 
 
 def install(portal):
-    """ This legacy uninstall is needed because we need to uninstall
-        genweb.theme *before* we run the steps from the alternatheme profile.
-        All other options (importstep, uninstall profile) run after run the
-        alternatheme profile.
+    """ This legacy install is needed because we need to uninstall genweb.theme
+        *before* we run the steps from the alternatheme profile. All other
+        options (importstep, uninstall profile) run after run the alternatheme
+        profile.
     """
     tool = getToolByName(portal, 'portal_quickinstaller')
     setup_tool = getToolByName(portal, 'portal_setup')
