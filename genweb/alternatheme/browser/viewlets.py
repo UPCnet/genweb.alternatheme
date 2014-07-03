@@ -378,3 +378,10 @@ class socialtoolsViewlet(viewletBase):
     grok.template('socialtools')
     grok.viewletmanager(IAboveContentTitle)
     grok.layer(IGenwebTheme)
+
+    def getData(self):
+        Title = aq_inner(self.context).Title()
+        contextURL = self.context.absolute_url()
+
+        return dict(Title = Title, URL = contextURL)
+
