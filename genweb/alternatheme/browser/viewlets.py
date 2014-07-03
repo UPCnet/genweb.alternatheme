@@ -34,12 +34,14 @@ from zope.annotation.interfaces import IAnnotations
 from Products.ATContentTypes.interfaces.event import IATEvent
 
 from genweb.core import HAS_CAS
+from genweb.core import HAS_PAM
 from genweb.core.interfaces import IHomePage
 from genweb.alternatheme.browser.interfaces import IHomePageView
 from genweb.core.utils import genweb_config, havePermissionAtRoot, pref_lang
 
 from genweb.alternatheme.browser.interfaces import IGenwebTheme
 
+import plone.api
 
 grok.context(Interface)
 
@@ -78,28 +80,21 @@ class gwPersonalBarViewlet(PersonalBarViewlet, viewletBase):
 
         return lang
 
-    def pam_installed(self):
+    def is_pam_installed(self):
         """ Check if plone.app.multilingual is installed """
-        pam = 'False'
-        try:
-            import sys
-            if 'plone.app.multilingual' in sys.modules:
-                pam = 'True'
-        except:
-            pam = 'False'
+        return HAS_PAM
 
-        return pam
+    def is_root(self):
+        return IPloneSiteRoot.providedBy(self.context)
+
+    def get_available_langs(self):
+        pl = plone.api.portal.get_tool(name='portal_languages')
+        return pl.getSupportedLanguages()
 
     def default_site_lang(self):
-        lang = self.portal().portal_properties.site_properties.default_language
-        if lang == 'ca':
-            return 'Català'
-        elif lang == 'es':
-            return 'Español'
-        elif lang == 'en':
-            return 'English'
-        else:
-            return lang
+        pl = plone.api.portal.get_tool(name='portal_languages')
+        default_lang = pl.getDefaultLanguage()
+        return pl.getAvailableLanguages()[default_lang]['native']
 
     def showRootFolderLink(self):
         return havePermissionAtRoot()
@@ -215,6 +210,7 @@ class gwSendEvent(viewletBase):
     def canManageSite(self):
         return checkPermission("plone.app.controlpanel.Overview", self.portal())
 
+
 class gwGlobalSectionsViewlet(GlobalSectionsViewlet, viewletBase):
     grok.name('genweb.globalsections')
     grok.viewletmanager(IPortalTop)
@@ -301,6 +297,7 @@ class gwFooter(viewletBase):
 class gwSearchViewletManager(grok.ViewletManager):
     grok.context(Interface)
     grok.name('genweb.search_manager')
+    grok.layer(IGenwebTheme)
 
 
 class gwSearchViewlet(SearchBoxViewlet, viewletBase):
@@ -374,3 +371,17 @@ class TitleViewlet(TitleViewlet, viewletBase):
             self.site_title = u"%s &mdash; %s" % (genweb_title, marca_UPC)
         else:
             self.site_title = u"%s &mdash; %s &mdash; %s" % (page_title, genweb_title, marca_UPC)
+
+
+class socialtoolsViewlet(viewletBase):
+    grok.name('genweb.socialtools')
+    grok.template('socialtools')
+    grok.viewletmanager(IAboveContentTitle)
+    grok.layer(IGenwebTheme)
+
+    def getData(self):
+        Title = aq_inner(self.context).Title()
+        contextURL = self.context.absolute_url()
+
+        return dict(Title = Title, URL = contextURL)
+
