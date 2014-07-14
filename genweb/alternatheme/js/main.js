@@ -74,7 +74,7 @@ $(document).ready(function () {
 
 // Live search
 
- $("#cercaCapca").typeahead({
+ /*$("#cercaCapca").typeahead({
    source: function (query, process) {
       setTimeout(searchElements(query, process) , 300);
    },
@@ -95,7 +95,7 @@ $(document).ready(function () {
   items: 12,
   minLength: 2
   });
-
+*/
  var searchElements = function( query, process ){
      $.get(document.getElementsByTagName('base')[0].href+"/typeaheadJson", { q: query }, function(data) {
           //Reseting containers
@@ -123,7 +123,8 @@ $(document).ready(function () {
 
 
 // RECAPTCHA
-  if (window.hasOwnProperty('RecaptchaOptions')) {
+/*
+  if (_.hasOwnProperty(window, 'RecaptchaOptions')) {
     if (RecaptchaOptions !== undefined) {
       var translations = RecaptchaOptions['custom_translations'];
       $('div.recaptcha_only_if_incorrect_sol').text(translations['incorrect_try_again']);
@@ -155,7 +156,7 @@ $(document).ready(function () {
     }
     $('#recaptcha_response_field').val(text_default);
 
-  }
+  }*/
   // FI RECAPTCHA
 
   // Share popover specific
@@ -165,6 +166,48 @@ $(document).ready(function () {
       content:function(){
           return $($(this).data('contentwrapper')).html();
       }
+  });
+
+  // Tags select2 field
+  $('#searchbytag').select2({
+      tags: [],
+      tokenSeparators: [","],
+      minimumInputLength: 1,
+      ajax: {
+          url: portal_url + '/getVocabulary?name=plone.app.vocabularies.Keywords&field=subjects',
+          data: function (term, page) {
+              return {
+                  query: term,
+                  page: page, // page number
+              };
+          },
+          results: function (data, page) {
+              return data;
+          },
+      },
+  });
+
+  // Tags search
+  $('#searchbytag').on("change", function(e) {
+      var query = $('#searchinputcontent .searchInput').val();
+      var path = $(this).data().name;
+      var tags = $('#searchbytag').val();
+
+      $('.listingBar').hide();
+      $.get(portal_url + '/' + path + '/search_filtered_content', { q: query, t: tags }, function(data) {
+          $('#tagslist').html(data);
+      });
+  });
+
+  // Content search
+  $('#searchinputcontent .searchInput').on('keyup', function(event) {
+      var query = $(this).val();
+      var path = $(this).data().name;
+      var tags = $('#searchbytag').val();
+      $('.listingBar').hide();
+      $.get(path + '/search_filtered_content', { q: query, t: tags }, function(data) {
+          $('#tagslist').html(data);
+      });
   });
 
 }); // End of $(document).ready

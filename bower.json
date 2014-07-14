@@ -21,9 +21,9 @@
   ],
   "devDependencies": {
     "bootstrap": "~3.1.1",
-    "fontawesome": "~4.1.0",
+    "fontawesome": "latest",
     "modernizr": "~2.8.2",
     "underscore": "~1.6.0",
-    "select2": "~3.4.8"
+    "select2": "https://github.com/ivaynberg/select2.git#master"
   }
 }
