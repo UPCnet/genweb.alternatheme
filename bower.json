@@ -24,6 +24,7 @@
     "fontawesome": "latest",
     "modernizr": "~2.8.2",
     "underscore": "~1.6.0",
-    "select2": "https://github.com/ivaynberg/select2.git#master"
+    "select2": "https://github.com/ivaynberg/select2.git#master",
+    "wookmark-jquery": "latest"
   }
 }

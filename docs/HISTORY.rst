@@ -1,11 +1,20 @@
 Changelog
 =========
 
-1.0b2 (unreleased)
+1.0b2 (2014-07-15)
 ------------------
 
-- Nothing changed yet.
-
+* Missing templates [Victor Fernandez de Alba]
+* Generalise the filtered_search_view for all Genwebs [Victor Fernandez de Alba]
+* added share on  socialnetwors [Roberto Diaz]
+* new social tools [Roberto Diaz]
+* Update [Victor Fernandez de Alba]
+* This legacy install is needed because we need to uninstall genweb.theme
+  *before* we run the steps from the alternatheme profile. All other
+  options (importstep, uninstall profile) run after run the alternatheme
+  profile. [Victor Fernandez de Alba]
+* Update [Victor Fernandez de Alba]
+* Erase doubled modernizr [Victor Fernandez de Alba]
 
 1.0b1 (2014-06-06)
 ------------------
