@@ -1,0 +1,16 @@
+<tal:block define="site_properties context/portal_properties/site_properties;
+                   use_view_action site_properties/typesUseViewActionInListings|python:()">
+
+<ul tal:define="continguts view/get_contenttags_by_query">
+  <tal:llistat repeat="contingut continguts">
+    <li tal:define="item_type contingut/portal_type;
+                    item_url contingut/getURL|contingut/absolute_url;">
+      <a tal:attributes="href python: item_url+'/view' if item_type in use_view_action else item_url;">
+        <h4><span tal:replace="contingut/Title">Title</span></h4>
+        <p tal:condition="contingut/Description"><span tal:content="contingut/Description">Description</span></p>
+      </a>
+    </li>
+  </tal:llistat>
+
+</ul>
+</tal:block>

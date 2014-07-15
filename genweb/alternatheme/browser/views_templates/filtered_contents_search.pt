@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ulearn">
+
+<head>
+  <metal:block fill-slot="top_slot">
+      <tal:insert tal:replace="nothing"
+                  tal:define="dummy python:request.set('enable_border', 1);
+                              disable_column_one python:request.set('disable_plone.rightcolumn',1);" />
+    </metal:block>
+</head>
+
+<body>
+
+  <metal:main metal:fill-slot="main"
+              tal:define="b_start python:0;
+                         b_start request/b_start | b_start;
+                         continguts python: view.getContent();
+                         path python: view.get_container_path()">
+
+  <div id="librarysearch">
+
+    <h1 class="documentFirstHeading" tal:content="context/Title" />
+
+    <div class="documentDescription" tal:content="context/Description">Descripció</div>
+
+
+    <div class="caixessearch">
+      <div id="searchinputcontent">
+        <div class="input-append">
+          <input class="searchInput" type="text" placeholder="Cerca"
+                 i18n:attributes="placeholder search"  tal:attributes="data-name path">
+          <span class="add-on"><i class="fa fa-search"></i></span>
+        </div>
+      </div>
+
+
+      <h3 i18n:translate="search_tags">Search tags</h3>
+      <div class="searchbytagcontainer" >
+          <input id="searchbytag"
+                 class="searchInput"
+                 type="hidden"
+                 placeholder="Cerca"
+                 i18n:attributes="placeholder search" tal:attributes="data-name path">
+      </div>
+
+    </div>
+
+    <!-- <div id="subscribealert" class="alert alert-info" role="alert">
+      <button data-dismiss="alert" class="close" type="button">×</button>
+      <p>
+      <strong i18n:translate="info">
+                Info
+      </strong><br/>
+      <tal:msg i18n:translate="use_the_search_input_to_find_objects_with_tags">
+        Use the search input to find objects with tags selected.
+      </tal:msg>
+      </p>
+    </div> -->
+
+    <section id="tagslist"
+             tal:define="site_properties context/portal_properties/site_properties;
+                        use_view_action site_properties/typesUseViewActionInListings|python:()">
+
+      <ul>
+        <tal:llistat repeat="contingut continguts">
+          <li tal:define="item_type contingut/portal_type;
+                          item_url contingut/getURL|contingut/absolute_url;">
+            <a tal:attributes="href python: item_url+'/view' if item_type in use_view_action else item_url;">
+              <h4><span tal:replace="contingut/Title">Title</span></h4>
+              <p tal:condition="contingut/Description"><span tal:content="contingut/Description">Description</span></p>
+            </a>
+          </li>
+        </tal:llistat>
+      </ul>
+
+
+    </section>
+
+  </div>
+
+  </metal:main>
+</body>
+</html>
