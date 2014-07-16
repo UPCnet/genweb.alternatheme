@@ -29,7 +29,7 @@
  <!-- Add new JS -->
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="False" enabled="True"
-    expression="" id="++components++bootstrap/dist/js/bootstrap.min.js" inline="False"/>
+    expression="" id="++components++root/bootstrap/dist/js/bootstrap.min.js" inline="False"/>
 
  <javascript id="++bootstrap++js/modernizr-2.6.1.min.js" remove="True" />
  <javascript id="++bootstrap++js/bootstrap.min.js" remove="True" />

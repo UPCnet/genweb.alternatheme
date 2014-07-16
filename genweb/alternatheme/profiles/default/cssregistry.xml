@@ -2,19 +2,19 @@
 <object name="portal_css" meta_type="Stylesheets Registry">
 
   <stylesheet
-    id="++components++bootstrap/dist/css/bootstrap.css"
+    id="++components++root/bootstrap/dist/css/bootstrap.css"
     media="" rel="stylesheet" rendering="link"
     cacheable="True" compression="safe" cookable="False"
     enabled="1" expression="python:portal.restrictedTraverse('@@instanceindevelmode').render()"/>
 
   <stylesheet
-    id="++components++bootstrap/dist/css/bootstrap.min.css"
+    id="++components++root/bootstrap/dist/css/bootstrap.min.css"
     media="" rel="stylesheet" rendering="link"
     cacheable="True" compression="safe" cookable="False"
     enabled="1" expression="python:not portal.restrictedTraverse('@@instanceindevelmode').render()"/>
 
   <stylesheet title=""
-    id="++components++fontawesome/css/font-awesome.min.css"
+    id="++components++root/fontawesome/css/font-awesome.min.css"
     media="" rel="stylesheet" rendering="link"
     cacheable="True" compression="safe" cookable="False"
     enabled="1" expression=""/>

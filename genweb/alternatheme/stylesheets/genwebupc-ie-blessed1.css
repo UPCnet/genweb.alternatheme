@@ -1811,7 +1811,7 @@ legend + .control-group {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url('/++gw++static/images/gh.png?1390394071');
+  background-image: url('/++genweb++static/images/gh.png?1390394071');
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
@@ -1863,11 +1863,11 @@ legend + .control-group {
 .dropdown-menu > .selected > a > .tileFooter:before,
 .dropdown-menu > .active > a > [class*=" icon-"],
 .dropdown-menu > .selected > a > [class*=" icon-"] {
-  background-image: url('/++gw++static/images/gh-w.png?1390394071'); }
+  background-image: url('/++genweb++static/images/gh-w.png?1390394071'); }
 
 /* line 44, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_sprites.scss */
 .icon-color {
-  background-image: url('/++gw++static/images/gh-c.png?1390394071'); }
+  background-image: url('/++genweb++static/images/gh-c.png?1390394071'); }
 
 /* line 49, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_sprites.scss */
 .icon-glass {
@@ -2609,7 +2609,7 @@ legend + .control-group {
 
 /* line 257, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_sprites.scss */
 .large-icon {
-  background-image: url('/++gw++static/images/gh-150.png?1390394071');
+  background-image: url('/++genweb++static/images/gh-150.png?1390394071');
   width: 21px;
   height: 21px;
   margin-top: -1px;
@@ -2635,7 +2635,7 @@ legend + .control-group {
 
 /* line 273, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_sprites.scss */
 .large-icon.icon-white {
-  background-image: url('/++gw++static/images/gh-150-w.png?1390394071'); }
+  background-image: url('/++genweb++static/images/gh-150-w.png?1390394071'); }
 
 /*extends icones*/
 /* line 8, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_dropdowns.scss */
@@ -6048,7 +6048,7 @@ button.pfg-draft-save .badge,
 
   /* line 16, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .navbar .btn-navbar i {
-    background-image: url('/++gw++static/images/gh-w.png?1390394071'); }
+    background-image: url('/++genweb++static/images/gh-w.png?1390394071'); }
 
   /* line 17, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_responsive-767px-max.scss */
   .navbar-fixed-top {
@@ -6281,7 +6281,7 @@ button.pfg-draft-save .badge,
     margin: 0 !important; }
   /* line 175, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_responsive-767px-max.scss */
   #portal-personaltools-wrapper .nav i, #portal-personaltools-wrapper .contentViews i, #portal-personaltools-wrapper .configlets i, #portal-personaltools-wrapper .formTabs i {
-    background-image: url('/++gw++static/images/gh-w.png?1390394071'); }
+    background-image: url('/++genweb++static/images/gh-w.png?1390394071'); }
   /* line 176, /Development/genwebupc4.buildout/src/genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_responsive-767px-max.scss */
   #portal-personaltools-wrapper .nav a:not(.btn):hover, #portal-personaltools-wrapper .contentViews a:not(.btn):hover, #portal-personaltools-wrapper .configlets a:not(.btn):hover, #portal-personaltools-wrapper .formTabs a:not(.btn):hover, #portal-personaltools-wrapper .nav a:not(.btn):focus, #portal-personaltools-wrapper .contentViews a:not(.btn):focus, #portal-personaltools-wrapper .configlets a:not(.btn):focus, #portal-personaltools-wrapper .formTabs a:not(.btn):focus {
     background: black; }

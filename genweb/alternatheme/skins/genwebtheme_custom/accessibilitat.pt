@@ -21,10 +21,10 @@
     </p>
 
 
-    <p> El <a target="_blank" href="https://genweb.upc.edu"><strong>Genweb UPC v3 <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></strong></a>
-    ha estat desenvolupat conjuntament pel <a target="_blank" href="http://www.upc.edu/comunicacio">Servei de Comunicació i Promoció <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>
-    de la UPC i <a target="_blank" href="http://www.upcnet.es">UPCnet <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>
-    utilitzant com a base el sistema de gestió de continguts de programari lliure <a target="_blank" href="http://plone.org">Plone <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>.
+    <p> El <a target="_blank" href="https://genweb.upc.edu"><strong>Genweb UPC v3 <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></strong></a>
+    ha estat desenvolupat conjuntament pel <a target="_blank" href="http://www.upc.edu/comunicacio">Servei de Comunicació i Promoció <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>
+    de la UPC i <a target="_blank" href="http://www.upcnet.es">UPCnet <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>
+    utilitzant com a base el sistema de gestió de continguts de programari lliure <a target="_blank" href="http://plone.org">Plone <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>.
     S'ha dissenyat perquè sigui completament accessible i usable, funcionant d'acord amb les guies d'accessibilitat W3C de contingut web.
     </p>
 
@@ -76,7 +76,7 @@
 
     <h2>Tecles d'accés</h2>
     <p>Les tecles d'accés són dreceres de navegació que permeten navegar per aquest web utilitzant el teclat.</p>
-    <p>Més informació sobre les tecles d'accés:  <a target="_blank" href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-accesskey">Guies d'accessibilitat W3C <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>.</p>
+    <p>Més informació sobre les tecles d'accés:  <a target="_blank" href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-accesskey">Guies d'accessibilitat W3C <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(obriu en una finestra nova)"></a>.</p>
     <p>Aquest web utilitza una configuració que coincideix amb la majoria de recomanacions d'accessibilitat internacionals.</p>
     <ul class="list list-condensed">
          <li><code>S</code> &mdash; Vés al contingut</li>

@@ -89,7 +89,7 @@
                       <a tal:condition="codi_upc" tal:attributes="href python:view.getURLDirectori(codi_upc)">
                         <i class="icon-book"></i>
                         Directori UPC
-                        <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                        <img class="img_blank" src="++genweb++static/images/blank_blau.png"
                            i18n:attributes="alt obrir_link_finestra_nova">
                       </a>
                     </p>
@@ -100,7 +100,7 @@
                           <a href="https://maps.upc.edu" class="show" rel="tooltip" data-placement="bottom" title="Clica el marcador per anar a UPCmaps" target="_blank">
                             <i class="icon-map-marker"></i>
                             UPCmaps
-                            <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                            <img class="img_blank" src="++genweb++static/images/blank_blau.png"
                                  i18n:attributes="alt obrir_link_finestra_nova" />
                           </a>
                         </p>

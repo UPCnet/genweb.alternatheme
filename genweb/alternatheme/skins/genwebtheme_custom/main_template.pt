@@ -57,7 +57,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <tal:comment replace="nothing"><!-- El seguent script ha d'anar seguit del meta del viewport --></tal:comment>
-        <script tal:attributes="src string:${portal_url}/++gw++static/js/ReView.js"></script>
+        <script tal:attributes="src string:${portal_url}/++genweb++static/js/ReView.js"></script>
 
         <link rel="apple-touch-icon" tal:attributes="href string:${portal_url}/apple-touch-icon-precomposed.png" /> <!-- 60x60 -->
         <link rel="apple-touch-icon" sizes="57x57" tal:attributes="href string:${portal_url}/apple-touch-icon-57x57-precomposed.png" /> <!-- iPhone -->
@@ -67,7 +67,7 @@
 
         <tal:comment content="nothing"> <!-- XXX BS3 BRANCH: TRIMMED Splitting CSS only for IE, the rest the common CSS --> </tal:comment>
 <!--         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++bootstrap++stylesheets/bootstrap.min.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++gw++static/css/font-awesome.min.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++genweb++static/css/font-awesome.min.css">
 
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++gw++stylesheets/genwebupc.css"> -->
 
@@ -203,13 +203,13 @@
 <tal:notajax tal:condition="not:ajax_load">
     <tal:comment replace="nothing"> <!-- A partir d'aqui, els JS comuns d'inicialització --> </tal:comment>
 
-    <!-- <script tal:attributes="src string:${portal_url}/++gw++static/js/dropkick.js"></script> -->
-    <!-- <script tal:attributes="src string:${portal_url}/++gw++static/js/scrollability.js"></script> -->
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/fileinput.js"></script>
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/customInput.js"></script>
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/jquery.nicescroll.js"></script>
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/prettify.js"></script>
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/alertify.min.js"></script>
+    <!-- <script tal:attributes="src string:${portal_url}/++genweb++static/js/dropkick.js"></script> -->
+    <!-- <script tal:attributes="src string:${portal_url}/++genweb++static/js/scrollability.js"></script> -->
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/fileinput.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/customInput.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.nicescroll.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/prettify.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/alertify.min.js"></script>
     <script tal:attributes="src string:${portal_url}/++components++root/select2/select2.js"></script>
 
     <tal:select2lang condition="python:lang=='ca'">
@@ -220,10 +220,10 @@
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_es.js"></script>
     </tal:select2lang>
 
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/underscore-min.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/underscore-min.js"></script>
 
     <!--[if IE 8]>
-    <script type="text/javascript" src="/++gw++static/js/jquery.corner.js"></script>
+    <script type="text/javascript" src="/++genweb++static/js/jquery.corner.js"></script>
     <script>
       $('.header-image').corner('top 8px');
       $('#portal-globalnav .navbar').corner('bottom 8px');
@@ -233,7 +233,7 @@
     <script tal:attributes="src string:${portal_url}/++gw++js/main.js"></script>
 
 
-    <script tal:attributes="src string:${portal_url}/++gw++static/js/ios-orientationchange-fix.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/ios-orientationchange-fix.js"></script>
     <tal:comment replace="nothing"> <!-- Finalment els que es posen a cada template especificament (per revisar) --> </tal:comment>
     <metal:javascriptslot define-slot="javascript_head_slot" />
 </tal:notajax>

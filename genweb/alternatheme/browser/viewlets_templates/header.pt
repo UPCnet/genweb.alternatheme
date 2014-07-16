@@ -3,7 +3,7 @@
   <div class="clearfix">
     <h1 class="pull-left">
       <a href="http://www.upc.edu" accesskey="1" target="_blank">
-        <img tal:attributes="src string:${viewlet/portal_url}/++gw++static/images/logoUPC.png"
+        <img tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/logoUPC.png"
              alt="Universitat Politècnica de Catalunya · BarcelonaTech">
       </a>
     </h1>
@@ -33,7 +33,7 @@
                        tal:define="codi_upc dades/codi_upc">
               <a tal:attributes="href python:viewlet.getURLDirectori(codi_upc)" target="_blank" accesskey="7">
                   Directori UPC
-                  <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                  <img class="img_blank" src="++genweb++static/images/blank_blau.png"
                     i18n:domain="genweb"
                     i18n:attributes="alt obrir_link_finestra_nova">
               </a>
@@ -42,7 +42,7 @@
           <tal:block tal:condition="python:not filtered">
             <a href="http://directori.upc.edu" target="_blank" accesskey="7">
                 Directori UPC
-                <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                <img class="img_blank" src="++genweb++static/images/blank_blau.png"
                   i18n:domain="genweb"
                   i18n:attributes="alt obrir_link_finestra_nova">
             </a>

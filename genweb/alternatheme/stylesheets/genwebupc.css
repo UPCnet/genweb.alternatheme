@@ -3513,7 +3513,7 @@ a.list-group-item-danger.active:focus {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   right: 7px;
   top: 8px;
-  background-image: url("/++gw++static/images/gh-w.png");
+  background-image: url("/++genweb++static/images/gh-w.png");
   background-position: -455px -71px;
   background-repeat: no-repeat;
   width: 17px;
@@ -3642,7 +3642,7 @@ a.list-group-item-danger.active:focus {
 }
 .subnavbar .nav-list .active ul a[class^="contenttype-"] span:after,
 .subnavbar .nav-list .active ul a[class*=" contenttype-"] span:after {
-  background-image: image-url("/++gw++static/images/gh.png");
+  background-image: image-url("/++genweb++static/images/gh.png");
   background-repeat: no-repeat;
   content: " ";
   display: block;
@@ -3723,7 +3723,7 @@ a.list-group-item-danger.active:focus {
   background-color: #000000;
 }
 html * .dropdown-menu a:hover .img_blank {
-  content: url("/++gw++static/images/blank_blanc.png");
+  content: url("/++genweb++static/images/blank_blanc.png");
   width: 10px;
   height: 10px;
 }
@@ -4165,7 +4165,7 @@ div.fitxa {
 }
 .sheet:before {
   content: "*";
-  content: url("/++gw++static/images/sheet.png");
+  content: url("/++genweb++static/images/sheet.png");
   font-size: 300%;
   position: absolute;
   right: -19px;
@@ -4331,7 +4331,7 @@ ul {
   margin-top: -15px;
 }
 .list-links li:before {
-  content: url("/++gw++static/images/arrow.png");
+  content: url("/++genweb++static/images/arrow.png");
   margin-left: -15px;
   margin-top: -13px;
 }
@@ -4518,7 +4518,7 @@ a {
 .vid:after,
 .img:after,
 .txt:after {
-  background: url("/++gw++static/images/gh-c.png") no-repeat;
+  background: url("/++genweb++static/images/gh-c.png") no-repeat;
   width: 14px;
   height: 14px;
   display: inline-block;
@@ -4671,7 +4671,7 @@ input[type="file"] {
   font-weight: bold;
 }
 .customfile-feedback-populated:before {
-  background: image-url("/++gw++static/images/gh-c.png") no-repeat;
+  background: image-url("/++genweb++static/images/gh-c.png") no-repeat;
   width: 14px;
   height: 14px;
   display: inline-block;
@@ -4957,7 +4957,7 @@ h2.title-inverse {
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 h2.title-inverse i {
-  background-image: url("/++gw++static/images/gh-w.png");
+  background-image: url("/++genweb++static/images/gh-w.png");
 }
 .portletCalendar .ploneCalendar {
   text-align: center;
@@ -5087,7 +5087,7 @@ input#title {
   min-height: 100%;
 }
 .img-mask iframe {
-  -webkit-mask: url("/++gw++static/images/mapa-mask.png") no-repeat center center;
+  -webkit-mask: url("/++genweb++static/images/mapa-mask.png") no-repeat center center;
   height: 400px;
   width: 100%;
 }
@@ -5151,7 +5151,7 @@ iframe {
   width: 14px;
   height: 14px;
   display: inline-block;
-  background: url("/++gw++static/images/gh.png") -239px -143px no-repeat;
+  background: url("/++genweb++static/images/gh.png") -239px -143px no-repeat;
   margin-left: 5px;
 }
 #portal-sitemap ul {
@@ -6315,43 +6315,43 @@ html {
   #portal-header h1.pull-left {
     height: 46px;
     width: 207px;
-    background: url("/++gw++static/images/logoUPC@2x.png") no-repeat;
+    background: url("/++genweb++static/images/logoUPC@2x.png") no-repeat;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
     background-size: 100%;
   }
   .header-image {
-    background-image: url("/++gw++static/images/capcalera@2x.jpg");
+    background-image: url("/++genweb++static/images/capcalera@2x.jpg");
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
     background-size: 100%;
   }
   .list-links li {
-    content: url("/++gw++static/images/arrow@2x.png");
+    content: url("/++genweb++static/images/arrow@2x.png");
   }
   .list-highlighted li {
-    content: url("/++gw++static/images/arrow_hl@2x.png");
+    content: url("/++genweb++static/images/arrow_hl@2x.png");
   }
   .img_blank[src*="blank_"] {
     width: 10px;
     height: 10px;
   }
   .img_blank[src*="blank_blau"] {
-    content: url("/++gw++static/images/blank_blau@2x.png");
+    content: url("/++genweb++static/images/blank_blau@2x.png");
   }
   .img_blank[src*="blank_gris"] {
-    content: url("/++gw++static/images/blank_gris@2x.png");
+    content: url("/++genweb++static/images/blank_gris@2x.png");
   }
   .img_blank[src*="blank_blanc"] {
-    content: url("/++gw++static/images/blank_blanc@2x.png");
+    content: url("/++genweb++static/images/blank_blanc@2x.png");
   }
   .userScreen,
   .userTablet,
   .userMobile,
   .userGenweb {
-    background-image: url("/++gw++static/images/sprite_usuari@2x.png");
+    background-image: url("/++genweb++static/images/sprite_usuari@2x.png");
     -webkit-background-size: 20px 400px;
     -moz-background-size: 20px 400px;
     -o-background-size: 20px 400px;
@@ -6540,7 +6540,7 @@ html.lt-ie8 .list-portlet li  {
   margin-bottom: 1em;
 }
 .link-parent:before {
-  background: url("/++gw++static/images/gh-w.png") no-repeat -290px -95px;
+  background: url("/++genweb++static/images/gh-w.png") no-repeat -290px -95px;
   content: " ";
   display: inline-block;
   height: 14px;

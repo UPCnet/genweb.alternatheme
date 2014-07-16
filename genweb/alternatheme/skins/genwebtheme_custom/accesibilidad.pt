@@ -17,11 +17,11 @@
 
     <h1 class="documentFirstHeading">Accesibilidad</h1>
 	<p>Este sitio web ha sido generado con <a target="_blank" href="https://www.upc.edu/comunicacio/www/genweb-upc">
-	<strong>Genweb UPC v3 <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></strong></a>,
+	<strong>Genweb UPC v3 <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></strong></a>,
 	una herramienta que permite la creación y gestión de webs según el libro de estilo institucional de la UPC.<br /><br />
-	El <a target="_blank" href="https://www.upc.edu/comunicacio/www/genweb-upc"><strong>Genweb UPC v3  <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"> </strong></a> ha sido desarrollado conjuntamente por el <a target="_blank"
-	href="http://www.upc.edu/comunicacio">Servicio de Comunicación y Promoción  <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a> de la UPC y <a target="_blank" href="http://www.upcnet.es">UPCnet
-	 <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a> utilizando como base el sistema de gestión de contenidos de software libre <a target="_blank" href="http://plone.org">Plone  <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a>. Se ha diseñado para que sea completamente accesible i usable, funcionando de acuerdo con las guias de accesibilidad W3C de contenido web.</p>
+	El <a target="_blank" href="https://www.upc.edu/comunicacio/www/genweb-upc"><strong>Genweb UPC v3  <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"> </strong></a> ha sido desarrollado conjuntamente por el <a target="_blank"
+	href="http://www.upc.edu/comunicacio">Servicio de Comunicación y Promoción  <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a> de la UPC y <a target="_blank" href="http://www.upcnet.es">UPCnet
+	 <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a> utilizando como base el sistema de gestión de contenidos de software libre <a target="_blank" href="http://plone.org">Plone  <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a>. Se ha diseñado para que sea completamente accesible i usable, funcionando de acuerdo con las guias de accesibilidad W3C de contenido web.</p>
 
 
 	<h2>Pautas WAI</h2>
@@ -75,7 +75,7 @@ En este sentido, las  técnicas empleadas en la web de la UPC encajan con lo que
 <h2>Teclas de acceso</h2>
 <p>Las teclas de acceso son un dispositivo de navegación que permite visitar este web utilizando el teclado.<br />
 Más información sobre las teclas de acceso: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-accesskey" target="_blank">Guías de
-accesibilidad W3C <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a>.</p>
+accesibilidad W3C <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a>.</p>
 <p>Este web utiliza una configuración que coincide con la mayoría de recomendaciones de accesibilidad internacionales.</p>
 
 <h3 class="prim">Teclas de acceso disponibles</h3>

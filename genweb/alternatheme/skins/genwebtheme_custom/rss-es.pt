@@ -20,16 +20,16 @@
 
   <h2>RSS de la UPC</h2>
   <ul class="list list-links">
-  	<li><a href="http://www.upc.edu/agenda-actividades/todas/RSS?set_language=es" target="_blank">Agenda UPC <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
-    <li><a target="_blank" href="http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=es">Noticias UPC [Oficina de Medios de Comunicación] <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
-    <li><a href="http://tv.upc.edu/rss-es/ultimos-videos/RSS?set_language=es" target="_blank">UPCtv, últimos vídeos publicados <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
+  	<li><a href="http://www.upc.edu/agenda-actividades/todas/RSS?set_language=es" target="_blank">Agenda UPC <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
+    <li><a target="_blank" href="http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=es">Noticias UPC [Oficina de Medios de Comunicación] <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
+    <li><a href="http://tv.upc.edu/rss-es/ultimos-videos/RSS?set_language=es" target="_blank">UPCtv, últimos vídeos publicados <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
   </ul>
 
   <h2>Agregadores de libre distribución</h2>
   <p>Un programa que utiliza RSS se denomina agregador. Existen muchos tipos de agregadores: incrustados en navegadores web, widgets para el escritorio, en programas de correo electrónico, en páginas web dedicadas y en programas dedicados. Los de libre distribución son:</p>
   <ul class="list list-links">
-    <li><a href="http://www.feedreader.com/" target="_blank">FeedReader <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
-    <li><a href="http://google.com/reader" target="_blank">Google Reader <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
+    <li><a href="http://www.feedreader.com/" target="_blank">FeedReader <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
+    <li><a href="http://google.com/reader" target="_blank">Google Reader <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(abrir en ventana nueva)"></a></li>
   </ul>
 </div>
 </body>

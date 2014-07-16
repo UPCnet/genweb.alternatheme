@@ -22,15 +22,15 @@
 
 	<h2>UPC RSS</h2>
     <ul class="list list-links">
-	    <li><a href="http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=en" target="_blank">News UPC. Barcelona Tech <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
-	   	<li><a href="http://tv.upc.edu/latest-videos/RSS?set_language=en" target="_blank">UPCtv, latest videos <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
+	    <li><a href="http://www.upc.edu/saladepremsa/actualitat-upc/RSS?set_language=en" target="_blank">News UPC. Barcelona Tech <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
+	   	<li><a href="http://tv.upc.edu/latest-videos/RSS?set_language=en" target="_blank">UPCtv, latest videos <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
     </ul>
 
 	<h2>Free readers</h2>
 	<p>A program that uses RSS is called feed "readers" or "aggregators". Some free readers are:</p>
 	<ul class="list list-links">
-		<li><a href="http://www.feedreader.com/" target="_blank">FeedReader <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
-		<li><a href="http://google.com/reader" target="_blank">Google Reader <img class="img_blank" src="++gw++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
+		<li><a href="http://www.feedreader.com/" target="_blank">FeedReader <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
+		<li><a href="http://google.com/reader" target="_blank">Google Reader <img class="img_blank" src="++genweb++static/images/blank_blau.png" alt="(open in a new window)"></a></li>
 	</ul>
 </div>
 </body>

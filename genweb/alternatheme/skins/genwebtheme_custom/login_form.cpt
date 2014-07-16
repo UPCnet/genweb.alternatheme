@@ -82,7 +82,7 @@
                  tal:attributes="href context/cas_login_url | nothing">
                 <strong>
                   <tal:entra i18n:translate="genweb-single-sign-on-v4">Single sign on log in</tal:entra>
-                  <img class="img_blank" src="++gw++static/images/blank_blau.png"
+                  <img class="img_blank" src="++genweb++static/images/blank_blau.png"
                        i18n:attributes="alt obrir_link_finestra_nova">
                 </strong>
              </a>
