@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b3 (unreleased)
+1.0b3 (2014-07-21)
 ------------------
 
-- Nothing changed yet.
-
+* Sanitize the static resources for the whole Genweb project [Victor Fernandez de Alba]
 
 1.0b2 (2014-07-15)
 ------------------
