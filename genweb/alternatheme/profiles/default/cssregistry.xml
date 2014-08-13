@@ -25,34 +25,33 @@
     cacheable="True" compression="safe" cookable="False"
     enabled="1" expression=""/>
 
- <stylesheet id="member.css" enabled="False" />
- <stylesheet id="base.css" enabled="False" />
- <stylesheet id="public.css" enabled="False" />
- <stylesheet id="columns.css" enabled="False" />
- <stylesheet id="authoring.css" enabled="False" />
- <stylesheet id="portlets.css" enabled="False" />
- <stylesheet id="controlpanel.css" enabled="False" />
- <stylesheet id="deprecated.css" enabled="False" />
- <stylesheet id="navtree.css" enabled="False" />
- <stylesheet id="invisibles.css" enabled="False" />
- <stylesheet id="forms.css" enabled="False" />
- <stylesheet id="ploneKss.css" enabled="False" />
- <stylesheet id="print.css" enabled="False" />
- <stylesheet id="mobile.css" enabled="False" />
- <stylesheet id="RTL.css" enabled="False" />
- <stylesheet id="++resource++plone.app.jquerytools.overlays.css" enabled="False" />
- <stylesheet id="IEFixes.css" enabled="False" />
+ <stylesheet id="member.css" enabled="False" remove="True" />
+ <stylesheet id="base.css" enabled="False" /remove="True" >
+ <stylesheet id="public.css" enabled="False" remove="True" />
+ <stylesheet id="columns.css" enabled="False" remove="True" />
+ <stylesheet id="authoring.css" enabled="False" remove="True" />
+ <stylesheet id="portlets.css" enabled="False" remove="True" />
+ <stylesheet id="controlpanel.css" enabled="False" remove="True" />
+ <stylesheet id="deprecated.css" enabled="False" remove="True" />
+ <stylesheet id="navtree.css" enabled="False" remove="True" />
+ <stylesheet id="invisibles.css" enabled="False" remove="True" />
+ <stylesheet id="forms.css" enabled="False" remove="True" />
+ <stylesheet id="ploneKss.css" enabled="False" remove="True" />
+ <stylesheet id="print.css" enabled="False" remove="True" />
+ <stylesheet id="mobile.css" enabled="False" remove="True" />
+ <stylesheet id="RTL.css" enabled="False" remove="True" />
+ <stylesheet id="++resource++plone.app.jquerytools.overlays.css" enabled="False" remove="True" />
+ <stylesheet id="IEFixes.css" enabled="False" remove="True" />
  <stylesheet id="ploneCustom.css" enabled="False" />
- <stylesheet id="collage.css" enabled="False" />
+ <stylesheet id="collage.css" enabled="False" remove="True" />
+ <stylesheet id="++resource++plone.app.collection.css" enabled="False" remove="True" />
+ <stylesheet id="++resource++collection.css" enabled="False" remove="True" />
 
 <!-- Per deshabilitar/passar a scss:
 collective.js.jqueryui.custom.min.css
 ++resource++plone.app.discussion.stylesheets/discussion.css
 ++resource++tinymce.stylesheets/tinymce.css
 collage.css
-popoll.css
-ploneboard.css
-++resource++Products.PloneSurvey.images/survey_results.css
 -->
 
 </object>
