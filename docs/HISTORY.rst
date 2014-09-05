@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b4 (unreleased)
+1.0b4 (2014-09-05)
 ------------------
 
-- Nothing changed yet.
-
+* New metadata column for open in new window [Victor Fernandez de Alba]
 
 1.0b3 (2014-07-21)
 ------------------
