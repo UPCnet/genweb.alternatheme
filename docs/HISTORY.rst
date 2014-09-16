@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b5 (unreleased)
+1.0b5 (2014-09-16)
 ------------------
 
-- Nothing changed yet.
-
+* Fix the remaining resources with fixed /++genweb++static/ paths [Victor Fernandez de Alba]
 
 1.0b4 (2014-09-05)
 ------------------
