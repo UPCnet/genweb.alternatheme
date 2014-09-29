@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b6 (unreleased)
+1.0b6 (2014-09-29)
 ------------------
 
-- Nothing changed yet.
-
+* Fix absolute path to relative [Victor Fernandez de Alba]
 
 1.0b5 (2014-09-16)
 ------------------
