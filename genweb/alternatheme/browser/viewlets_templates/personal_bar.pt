@@ -99,7 +99,7 @@
               <tal:help i18n:translate="genweb-ajuda">Help</tal:help>
               <img i18n:attributes="alt obrir_link_finestra_nova"
                     class="img_blank"
-                    src="/++genweb++static/images/blank_blanc.png">
+                    src="++genweb++static/images/blank_blanc.png">
               </a>
             </li>
             <li role="menuitem">
@@ -143,7 +143,7 @@
                           <i tal:attributes="class notificacio/i-class"></i>
                           <tal:notificacio content="notificacio/text">Notificació</tal:notificacio>
                           <img class="img_blank"
-                               src="/++genweb++static/images/blank_blanc.png"
+                               src="++genweb++static/images/blank_blanc.png"
                                tal:condition="notificacio/target-blank"
                                i18n:attributes="alt obrir_link_finestra_nova">
                           <span class="badge badge-warning"

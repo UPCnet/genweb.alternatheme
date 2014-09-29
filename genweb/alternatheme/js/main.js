@@ -68,7 +68,7 @@ $(document).ready(function () {
   });
 
   if ( prettify ) {
-      $.getScript("/++genweb++static/js/prettify.js", function() {prettyPrint()});
+      $.getScript(window.location.href + "/++genweb++static/js/prettify.js", function() {prettyPrint()});
   }
 
 

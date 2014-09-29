@@ -88,7 +88,7 @@
                                            class string:${item_wf_state_class} link-plain">
                            <span tal:content="item_title_or_id">
                             External Link</span>
-                        <img class="img_blank" src="/++genweb++static/images/blank_blau.png"
+                        <img class="img_blank" src="++genweb++static/images/blank_blau.png"
                              i18n:domain="genweb"
                              i18n:attributes="alt obrir_link_finestra_nova"></a>
                     </tal:span>
