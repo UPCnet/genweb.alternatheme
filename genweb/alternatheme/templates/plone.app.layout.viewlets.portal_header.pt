@@ -1,7 +1,7 @@
 <p class="sr-only">
     <a accesskey="S" href="#content"
        i18n:domain="genweb"
-       i18n:translate="">
+       i18n:translate="skip_to_content">
         Vés al contingut (premeu Retorn)
     </a></p>
 <header id="portal-header" role="banner"
