@@ -26,6 +26,7 @@ from plone.app.layout.viewlets.common import SearchBoxViewlet, TitleViewlet, Man
 from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IBelowContent
 from plone.app.layout.viewlets.interfaces import IPortalFooter, IAboveContentTitle
 from Products.CMFPlone.interfaces import IPloneSiteRoot
+from plone.app.layout.navigation.interfaces import INavigationRoot
 
 from Products.ATContentTypes.interface.news import IATNewsItem
 from genweb.core.adapters import IImportant
@@ -325,7 +326,7 @@ class gwManagePortletsFallbackViewlet(ManagePortletsFallbackViewlet, viewletBase
 
         # Portlet container will be in the context,
         # Except in the portal root, when we look for an alternative
-        if IPloneSiteRoot.providedBy(self.context):
+        if INavigationRoot.providedBy(self.context):
             pc = getToolByName(context, 'portal_catalog')
             result = pc.searchResults(object_provides=IHomePage.__identifier__,
                                       Language=pref_lang())

@@ -122,7 +122,7 @@
               Up one level
           </a>
 
-        <div>
+        <div class="fc fc-container" tal:attributes="data-context-base-url view/context_base_url">
           <form name="folderContentsForm"
                 method="post"
                 action="folder_object"
