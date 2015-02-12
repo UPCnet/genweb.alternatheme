@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.0b7 (unreleased)
+1.0b7 (2015-02-12)
 ------------------
 
-- Nothing changed yet.
-
+* Fix wcfc [Victor Fernandez de Alba]
+* Translation tag [hanirok]
+* Canvi url maps [Corina Riba]
 
 1.0b6 (2014-09-29)
 ------------------
