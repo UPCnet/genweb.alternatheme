@@ -205,7 +205,7 @@
 
     <!-- <script tal:attributes="src string:${portal_url}/++genweb++static/js/dropkick.js"></script> -->
     <!-- <script tal:attributes="src string:${portal_url}/++genweb++static/js/scrollability.js"></script> -->
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/fileinput.js"></script>
+    <script tal:attributes="src string:${portal_url}/++gw++js/fileinput.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/customInput.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.nicescroll.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/prettify.js"></script>
@@ -218,6 +218,18 @@
 
     <tal:select2lang condition="python:lang=='es'">
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_es.js"></script>
+    </tal:select2lang>
+
+    <tal:select2lang condition="python:lang=='en'">
+      <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_en.js"></script>
+    </tal:select2lang>
+
+    <tal:select2lang condition="python:lang=='fr'">
+      <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_fr.js"></script>
+    </tal:select2lang>
+
+    <tal:select2lang condition="python:lang=='ar'">
+      <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_ar.js"></script>
     </tal:select2lang>
 
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/underscore-min.js"></script>

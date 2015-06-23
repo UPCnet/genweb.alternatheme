@@ -7,15 +7,9 @@ $(document).ready(function () {
   jarn.i18n.loadCatalog('genweb');
   _gw_i18n = jarn.i18n.MessageFactory('genweb');
 
-  var intervalId = setInterval(function(event) {
-     if (window._gw_i18n !== undefined && window._i18nsucks === true) {
-         $('[type=file]').each(function(index, value) {
-             $(value).customFileInput();
-         });
-
-         clearInterval(intervalId);
-     }
-  }, 50);
+  $('[type=file]').each(function(index, value) {
+       $(value).customFileInput();
+  });
 
   // $('select:not([multiple])').dropkick();
   $('ul.dk_options_inner').addClass('scrollable');
