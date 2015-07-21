@@ -19,10 +19,6 @@
     <li tal:condition="batch/show_link_to_first">
         <a href=""
            tal:attributes="href python:view.make_link(1)">1</a>
-        <span tal:condition="batch/second_page_not_in_navlist"
-              tal:omit-tag="">
-           ...
-        </span>
     </li>
 
     <!-- Pagelist with links to previous pages for quick navigation -->
@@ -45,15 +41,10 @@
 
     <!-- Link to last -->
     <li tal:condition="batch/show_link_to_last">
-        <span tal:condition="batch/before_last_page_not_in_navlist"
-              tal:omit-tag="">
-           ...
-        </span>
-        <a href=""
-           tal:attributes="href python:view.make_link(batch.lastpage)"
-           tal:content="batch/lastpage">3457</a>
+      <a href=""
+         tal:attributes="href python:view.make_link(batch.lastpage)"
+         tal:content="batch/lastpage">3457</a>
     </li>
-
     <li class="next"
           tal:condition="batch/has_next">
         <a rel="tooltip" data-placement="top" title="Següent" href=""
