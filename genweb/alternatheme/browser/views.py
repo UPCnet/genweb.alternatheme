@@ -768,13 +768,39 @@ class FilteredContentsSearchView(grok.View):
                 r_results = pc.searchResults(path=path,
                                              SearchableText=query)
 
-            return r_results
+            results = []
+            for obj in r_results:
+                existImage = False
+                try:
+                    obj.getObject().image.filename
+                    existImage = True
+                except:
+                    existImage = False
+                results.append(
+                    dict(Title=obj.Title,
+                         getURL=obj.getURL(),
+                         existImage=existImage,
+                         Description=obj.Description))
+            return results
         else:
             r_results = pc.searchResults(path=path,
                                          Subject={'query': self.tags, 'operator': 'and'})
 
-            return r_results
-            # return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
+            results = []
+            for obj in r_results:
+                existImage = False
+                try:
+                    obj.getObject().image.filename
+                    existImage = True
+                except:
+                    existImage = False
+                results.append(
+                    dict(Title=obj.Title,
+                         getURL=obj.getURL(),
+                         existImage=existImage,
+                         Description=obj.Description))
+
+            return results
 
     def get_tags_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
