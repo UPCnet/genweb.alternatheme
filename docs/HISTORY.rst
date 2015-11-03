@@ -1,11 +1,15 @@
 Changelog
 =========
 
-1.0b8 (unreleased)
+1.0b8 (2015-11-03)
 ------------------
 
-- Nothing changed yet.
-
+* updated search ajax view to show img [Roberto Diaz]
+* added fa & bootstrap css [Roberto Diaz]
+* added css to theme [Roberto Diaz]
+* removed 3 dots from list [Roberto Diaz]
+* error en css [Roberto Diaz]
+* added new path for JS [Roberto Diaz]
 
 1.0b7 (2015-02-12)
 ------------------
