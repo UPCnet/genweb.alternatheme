@@ -852,3 +852,5 @@ class SearchFilteredContentAjax(FilteredContentsSearchView):
     grok.context(Interface)
     grok.template('filtered_contents_search_ajax')
     grok.layer(IGenwebTheme)
+    grok.require('zope2.Public')
+
