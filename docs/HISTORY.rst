@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b9 (unreleased)
+1.0b9 (2015-11-05)
 ------------------
 
-- Nothing changed yet.
-
+* solved error search e-library [root colladaverda]
 
 1.0b8 (2015-11-03)
 ------------------
