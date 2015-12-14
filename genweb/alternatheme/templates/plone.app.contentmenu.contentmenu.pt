@@ -2,7 +2,7 @@
     class="nav nav-pills pull-right clearfix"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
-    tal:define="menu view/menu; dummy menu/reverse;
+    tal:define="menu view/menu|nothing; dummy menu/reverse|nothing;
                 utils context/@@genweb.utils"
     tal:condition="view/available"
     i18n:domain="genweb">
