@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b10 (unreleased)
+1.0b10 (2015-12-14)
 -------------------
 
-- Nothing changed yet.
-
+* added nothing to condition [roberto.diaz]
 
 1.0b9 (2015-11-05)
 ------------------
