@@ -11,37 +11,37 @@
 
   <div class="share_content" style="display: none;" tal:define="data viewlet/getData">
 
-    <a target="_blank" href=""
+    <a target="_blank"
       tal:attributes="href string:http://plus.google.com/share?url=${data/URL}" onclick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
       <img style="margin-right: 5px;" 
         tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_googleplus.png;" 
         i18n:attributes="title comparteix_google; alt comparteix_google" /></a>
 
-    <a target="_blank" href=""
+    <a target="_blank"
       tal:attributes="href string:http://www.facebook.com/sharer.php?u=${data/URL}">
       <img style="margin-right: 5px;" 
         tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_facebook.png;" 
         i18n:attributes="title comparteix_facebook; alt comparteix_facebook"/></a>
 
-    <a target="_blank" href=""
+    <a target="_blank"
       tal:attributes="href string:http://www.linkedin.com/shareArticle?url=${data/URL}">
       <img style="margin-right: 5px;" 
         tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_linkedin.png" 
         i18n:attributes="title comparteix_linkedin; alt comparteix_linkedin"/></a>
 
-    <a target="_blank" href=""
+    <a target="_blank"
       tal:attributes="href string:https://twitter.com/intent/tweet?text=${data/Title}&tw_p=tweetbutton&url=${data/URL}">
       <img style="margin-right: 5px;" 
         tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_twitter.png" 
         i18n:attributes="title comparteix_twitter; alt comparteix_twitter"/></a>
 
-    <a target="_blank" href="javascript:window.print()">
+    <a href="javascript:window.print()">
       <img style="margin-right: 5px;" 
         tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_print.png" 
         i18n:attributes="title Print; alt Print"/></a>
 
-    <a target="_blank" href="javascript:location.href='mailto:?SUBJECT='+document.title+'&amp;BODY='+escape(location.href);void 0">
+    <a href="javascript:location.href='mailto:?SUBJECT='+document.title+'&amp;BODY='+escape(location.href);void 0">
       <img tal:attributes="src string:${viewlet/portal_url}/++genweb++static/images/icon_email.png" 
         i18n:attributes="title send_mail; alt send_mail"/></a>
 
