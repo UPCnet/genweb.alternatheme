@@ -176,9 +176,9 @@
 
                 <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" tal:condition="not:ajax_load" />
 
-            </div> <!-- Fi span content -->
+            </div>
 
-            <!-- Ojo, a GW no tenim mai columna dreta de portlets! no? -->
+            <tal:comment replace="nothing"> <!-- Ojo, a GW no tenim mai columna dreta de portlets! no? --></tal:comment>
             <tal:notajax tal:condition="not:ajax_load">
                 <div id="portal-column-two"
                     class="col-md-X"
@@ -189,7 +189,7 @@
                     </metal:portlets>
                 </div>
             </tal:notajax>
-        </div> <!-- Fi row content -->
+        </div>
 
     </div>
 </section>
