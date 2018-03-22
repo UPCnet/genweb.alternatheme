@@ -54,16 +54,10 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Genweb Reference Theme (alternative BS3-based)"
+      title="Genweb AlternaTheme (genweb.alternatheme)"
       directory="profiles/default"
       description="Installs the genweb.alternatheme package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-<!--     <genericsetup:importStep
-      name="genweb.alternatheme.setupstep"
-      title="geweb.alternatheme special import handlers"
-      description=""
-      handler="genweb.alternatheme.setuphandlers.UninstallGWT" />
- -->
 </configure>
