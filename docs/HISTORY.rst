@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.0b11 (unreleased)
+1.0b11 (2018-04-04)
 -------------------
 
-- Nothing changed yet.
-
+* removed recaptcha dependency [Roberto Diaz]
+* updated packaged name [Roberto Diaz]
+* Change literal [Roberto Diaz]
+* changed comments to <tal:comment replace="nothing"> [root]
+* Removed blanks from socialtools links, because firefox, doesn't generate mail link well [roberto.diaz]
 
 1.0b10 (2015-12-14)
 -------------------
